@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparaciones de Celulares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Reparaciones de Celulares</h1>
+        
+        <div class="button-group">
+            <button id="ingresoTelefono">Ingresar Teléfono</button>
+            <button id="diagnostico" disabled>Diagnosticar</button>
+            <button id="autorizacion" disabled>Autorización</button>
+            <button id="finalizado" disabled>Finalizado</button>
+        </div>
+
+        <div class="checkbox-group">
+            <p>Autorización del usuario y abono del 50%:</p>
+            <input type="checkbox" id="myCheck" disabled>
+            <label for="myCheck">Abono del 50%</label> 
+            <p id="text">Haga clic en Autorización</p>
+        </div>
+
+        <div class="select-group">
+            <p>Seleccione la marca de su equipo:</p>
+            <select id="mySelect" disabled>
+                <option>Samsung</option>
+                <option>Apple</option>
+                <option>Xiaomi</option>
+                <option>Oppo</option>
+                <option>Motorola</option>
+                <option>Huawei</option>
+                <option>Realme</option>
+                <option>Honor</option>
+            </select>
+            <p id="tecnico"></p>
+        </div>
+
+        <div class="status-group">
+            <p>Estado de la Reparación:</p>
+            <p id="estado"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="script.js"></script>
+    <script>
+        Reparaciones.init({
+            Nombre: "Reparaciones de Celulares",
+            Ubicacion: "Lima"
+        });
+    </script>
+</body>
+</html>

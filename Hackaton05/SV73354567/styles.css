@@ -1,0 +1,12 @@
+.titulos{
+    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #d3f5c8, #d2eeee);
+    padding-left: 25px;
+}

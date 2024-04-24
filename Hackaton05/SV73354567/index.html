@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKATON 05</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="titulos" id="sistema"></h1>
+    <h3 class="titulos" id="sede"></h3> 
+    <div class="container mt-4">
+     
+
+        <!-- Formulario de registro -->
+        <form id="formCelular" class="mb-4">
+            <div class="form-group">
+                <label for="nombreCliente">Nombre del Cliente:</label>
+                <input type="text" class="form-control" id="nombreCliente" required>
+            </div>
+            <div class="form-group">
+                <label for="numeroSerie">Número de Serie:</label>
+                <input type="text" class="form-control" id="numeroSerie" required>
+            </div>
+            <div class="form-group">
+                <label for="imei">IMEI:</label>
+                <input type="text" class="form-control" id="imei" required>
+            </div>
+            <div class="form-group">
+                <label for="diagnostico">Diagnóstico:</label>
+                <input type="text" class="form-control" id="diagnostico" required>
+            </div>
+            <div class="form-group">
+                <label for="total">Total del Servicio:</label>
+                <input type="number" class="form-control" id="total" required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <select class="form-control" id="marca" required>
+                    <option value="XIAOMI">XIAOMI</option>
+                    <option value="LG">LG</option>
+                    <option value="APPLE">APPLE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="repuestos">Repuestos:</label>
+                <input type="text" class="form-control" id="repuestos" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar Celular</button>
+            <button onclick="mostrarDetalles()" class="btn btn-primary">Mostrar Detalles</button>
+            <button onclick="ocultarDetalles()" class="btn btn-primary">Ocultar Detalles</button>
+        </form>
+
+        <!-- Tabla1 Detalle del Servicio -->
+        <div id="detalleServicio" style="display: none;">
+            <h3>Detalle Primer Diagnóstico:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre Cliente</th>
+                        <th>Marca</th>
+                        <th>Número de Serie</th>
+                        <th>IMEI</th>
+                        <th>Diagnóstico</th>
+                        <th>Total del Servicio</th>
+                        <th>Técnico</th>
+                        <th>Repuestos</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="listaCelulares"></tbody>
+            </table>
+            
+        </div>
+
+        <!-- Tabla2 de Celulares Pendientes -->
+        <div id="tablaPendientes" style="display: none;">
+            <h3>Celulares Pendientes de Reparación</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre Cliente</th>
+                        <th>Marca</th>
+                        <th>Número de Serie</th>
+                        <th>IMEI</th>
+                        <th>Diagnóstico</th>
+                        <th>Total del Servicio</th>
+                        <th>Técnico</th>
+                        <th>Repuestos</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="listaPendientes"></tbody>
+            </table>
+        </div>
+
+    
+
+<!-- Tabla3 de Celulares Pendientes -->
+<div id="tablaReparados" style="display: none;">
+    <h3>Celulares Reparados por Despachar</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Cliente</th>
+                <th>Marca</th>
+                <th>Número de Serie</th>
+                <th>IMEI</th>
+                <th>Diagnóstico</th>
+                <th>Total del Servicio</th>
+                <th>Técnico</th>
+                <th>Repuestos</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody id="listaReparados"></tbody>
+    </table>
+</div>
+
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

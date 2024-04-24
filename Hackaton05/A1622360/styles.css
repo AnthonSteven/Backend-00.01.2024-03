@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.button-group, .checkbox-group, .select-group, .status-group {
+    margin-bottom: 20px;
+}
+
+.button-group button, .checkbox-group input[type="checkbox"], .checkbox-group label, .select-group select {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.button-group button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.button-group button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.checkbox-group label {
+    vertical-align: middle;
+    font-weight: bold;
+    color: #333;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+    color: #007bff;
+}
+
+.select-group select {
+    width: 100%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.status-group p:first-child {
+    margin-top: 0;
+}

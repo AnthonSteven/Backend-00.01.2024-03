@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKATON 05 - Reparaciones de Celulares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>HACKATON 05 - Reparaciones de Celulares</h1>
+        <label for="imeiInput">Ingrese el IMEI del teléfono (12 dígitos):</label>
+        <input type="text" id="imeiInput" maxlength="12">
+        <button onclick="iniciarReparacion()">Iniciar Reparación</button>
+        <div id="estadoInicial" style="display: none;">
+            <h2>Estado Inicial del Teléfono</h2>
+            <ul id="estadoInicialList"></ul>
+        </div>
+        <div id="reparacionesRealizadas" style="display: none;">
+            <h2>Reparaciones Realizadas</h2>
+            <ul id="reparacionesList"></ul>
+            <p id="costoTotal"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
