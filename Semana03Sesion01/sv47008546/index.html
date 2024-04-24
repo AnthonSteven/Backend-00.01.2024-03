@@ -510,6 +510,462 @@ typeof 16; // da como resultado = "Number"
 </script>
 
 
+<h1>JavaScript Functions</h1>
+<p>Call a function which performs a calculation and returns the result:</p>
+<p id="demo"></p>
+<!-- p1 y p2 son variables que declaramos, funcion es la invocacion y return es lo que llegara-->
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+let result = myFunction(6, 3);
+document.getElementById("demo").innerHTML = result;
+</script>
+
+
+<h1>JavaScript Functions</h1>
+<p>Call a function which performs a calculation and returns the result:</p>
+<p id="demo"></p>
+
+<script>
+let x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+
+<h1>JavaScript Functions</h1>
+<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+<p id="demo"></p>
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32); // Esta es la formula para convertir de grados farenheit a celsius  (Donde "f" seria la cantidad de grados a convertir)
+}
+let value = toCelsius(77);
+document.getElementById("demo").innerHTML = value;
+</script>
+
+
+<h1>JavaScript Functions</h1>
+<p>Using a function as a variable:</p>
+<p id="demo"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+
+
+<h2>JavaScript Objects</h2>
+<p>There are two different ways to access an object property.</p>
+<p>You can use person.property or person["property"].</p>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+person.firstName + " " + person.lastName;
+</script>
+
+
+
+<h2>JavaScript Objects</h2>
+<p>An object method is a function definition, stored as a property value.</p>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+
+
+<h2>JavaScript Objects</h2>
+<p>If you access an object method without (), it will return the function definition:</p>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName;
+</script>
+
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+<p id="demo"></p>
+
+
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+<p>Click the button to display the date.</p>
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+<p id="demo"></p>
+
+
+
+<h2>Never Create Strings as Objects</h2>
+<p>Strings and objects cannot be safely compared.</p>
+<p id="demo"></p>
+
+<script>
+let x = "John";        // x is a string
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x==y);
+</script>
+
+
+<h2>Never Create Strings as Objects</h2>
+<p>JavaScript objects cannot be compared.</p>
+<p id="demo"></p>
+
+<script>
+let x = new String("John");  // x is an object
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x==y);
+</script>
+
+
+<h2>Never Create Strings as Objects</h2>
+<p>JavaScript objects cannot be compared.</p>
+<p id="demo"></p>
+
+<script>
+let x = new String("John");  // x is an object
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x===y);
+</script>
+
+
+<h1>JavaScript String Methods</h1>
+<p>Convert string to upper case:</p> //Convertir texto en mayuscula
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Hello World!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML = text.toUpperCase();}
+</script>
+
+<h1>JavaScript String Methods</h1>
+<p>Convert string to lower case:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Hello World!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML; document.getElementById("demo").innerHTML = text.toLowerCase();}
+</script>
+
+<h1>JavaScript Strings</h1>
+<h2>The trim() Method</h2>
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trim();document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The trim() Method</h2>
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trim();
+
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The trimStart() Method</h2>
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimStart();document.getElementById("demo").innerHTML ="Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The trimEnd() Method</h2>
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();document.getElementById("demo").innerHTML ="Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+
+<h1>JavaScript Strings</h1>
+<h2>The padStart() Method</h2>
+<p>The padStart() method pads a string from the start.</p>
+<p>It pads the string with another string (multiple times) until it reaches a given length.</p>
+<p id="demo"></p>
+
+<script>
+let textpads = "5";
+textpads = text.padStart(4,"0");document.getElementById("demo").innerHTML = textpads;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The padStart() Method</h2>
+<p>The padStart() method pads a string from the start.</p>
+<p>It pads the string with another string (multiple times) until it reaches a given length.</p>
+<p id="demo"></p>
+
+<script>
+let numb = 5;
+let text = numb.toString();
+document.getElementById("demo").innerHTML = text.padStart(4,0);
+</script>
+
+
+<h1>JavaScript Strings</h1>
+<h2>The repeat() Method</h2>
+<p>repeat() returns a new string with a number of copies of a string:</p>
+<p id="demo"></p>
+
+<p>repeat() is not supported in Internet Explorer.</p>
+
+<script>
+let text = "Hello world!";
+let result = text.repeat(2);document.getElementById("demo").innerHTML = result;
+</script>
+
+
+<h1>JavaScript String Methods</h1>
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Please visit Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML; document.getElementById("demo").innerHTML = text.replace("Microsoft","W3Schools");}
+</script>
+
+
+
+<h1>JavaScript String Methods</h1>
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Please visit Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML; document.getElementById("demo").innerHTML = text.replace(/MICROSOFT/i,"W3Schools");}
+</script>
+
+
+
+<h1>JavaScript String Methods</h1>
+<p>Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph below:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Please visit Microsoft and Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML; document.getElementById("demo").innerHTML = text.replace(/Microsoft/g,"W3Schools");}
+</script>
+
+
+<h1>JavaScript Strings</h1>
+<h2>The replaceAll() Method</h2>
+<p>ES2021 intoduced the string method replaceAll().</p>
+<p id="demo"></p>
+
+<script>
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The replaceAll() Method</h2>
+<p>ES2021 intoduced the string method replaceAll().</p>
+<p id="demo"></p>
+
+<script>
+let text = "I love cats. Cats are very easy to love. Cats are very popular";
+text = text.replaceAll(/Cats/g,"Dogs");
+text = text.replaceAll(/cats/g,"dogs");
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+<h1>JavaScript String Methods</h1>
+<p>Display the first array element, after a string split:</p>
+<p id="demo"></p>
+
+<script>
+let text = "a,b,c,d,e,f";
+const myArray = text.split(",");
+document.getElementById("demo").innerHTML = myArray[0];
+</script>
+
+
+
+<h1>JavaScript String Methods</h1>
+<h2>The split().Method</h2>
+<p id="demo"></p>
+
+<script>
+let text = "Hello";
+const myArr = text.split("");
+text = "";
+for (let i = 0; i < myArr.length; i++) {
+  text += myArr[i] + "<br>"
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The indexOf() Method</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a string in a string.</p>
+<p>The position of the first occurrence of "locate" is:</p>
+<p id="demo"></p>
+
+<script>
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate"); document.getElementById("demo").innerHTML = index; 
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The indexOf() Method</h2>
+<p>The indexOf() method accepts a second parameter as the starting position for the search:</p>
+<p id="demo"></p>
+
+<script>
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate",15);
+document.getElementById("demo").innerHTML = index; 
+</script>
+El conteo iniciara en el 15 como señala el segundo parametro, sin embargo el conteo de caracteres seguira siendo el mismo, es decir 
+la posicion que saldra como resultado es: 21, DEBIDO a que el primer "locate" esta fuera del rango del segundo parametro. 
+
+
+<h1>JavaScript Strings</h1>
+<h2>The lastIndexOf() Method</h2>
+<p>The lastIndexOf() method accepts a second parameter as the starting position for the search.</p>
+<p>Remember that the lastIndexOf() method searches backwards, so position 15 means start the search at position 15, and search to the beginning.</p>
+<p id="demo"></p>
+
+<script>
+let text = "Please locate where 'locate' occurs!";let index = text.lastIndexOf("locate", 15);
+document.getElementById("demo").innerHTML = index; 
+</script>
+La busqueda iniciara desde la posicion 15 contando desde el final hacia el inicio.
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The search() Method</h2>
+<p>The search() method returns the position of the first occurrence of a string in a string.</p>
+<p>The position of the first occurrence of "locate" is:</p>
+<p id="demo"></p>
+
+<script>
+let text = "Please locate where 'locate' occurs!";
+let index = text.search("locate");
+document.getElementById("demo").innerHTML = index; 
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The matchAll() Method</h2>
+<p>ES2020 intoduced the string method matchAll().</p>
+<p id="demo"></p>
+
+<script>
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+const iterator = text.matchAll("Cats");
+document.getElementById("demo").innerHTML = Array.from(iterator);
+</script>
+
+
+<h1>JavaScript Strings</h1>
+<h2>The includes() Method</h2>
+<p>Check if a string includes "world":</p>
+<p id="demo"></p>
+<p>The includes() method is not supported in Internet Explorer.</p>
+
+<script>
+let text = "Hello world, welcome to the universe.";
+document.getElementById("demo").innerHTML = text.includes("world");
+</script>
+
+
+
+<h1>JavaScript Strings</h1>
+<h2>The includes() Method</h2>
+<p>Check if a string includes "world" starting from position 12:</p>
+<p id="demo"></p>
+
+<p>The includes() method is not supported in Internet Explorer.</p>
+
+<script>
+let text = "Hello world, welcome to the universe.";
+document.getElementById("demo").innerHTML = text.includes("world", 6);
+</script>
 
 
 
