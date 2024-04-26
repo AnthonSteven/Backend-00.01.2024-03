@@ -39,18 +39,18 @@
 //   document.getElementById("result").innerHTML =strHtml;
 
 
-// let sesionObj = sessionStorage.getItem("login");
-// if(sesionObj!== null){
-//     console.log("Si esta logueado")
-// }
-// else{
-//     console.log("No se ha legueado proceder al login")
-//     let objLogin = {
-//         user:"rpineda",
-//         pass:"1234567890"
-//     } 
-//     sessionStorage.setItem("login", JSON.stringify(objLogin));
-// }
+let sesionObj = sessionStorage.getItem("login");
+if(sesionObj!== null){
+    console.log("Si esta logueado")
+}
+else{
+    console.log("No se ha legueado proceder al login")
+    let objLogin = {
+        user:"rpineda",
+        pass:"1234567890"
+    } 
+    sessionStorage.setItem("login", JSON.stringify(objLogin));
+}
 
 
 
