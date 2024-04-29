@@ -72,7 +72,5 @@ if (tecnico1.puedeReparar(telefono1.marca)) {
     telefono1.autorizacion = true;
     tecnico1.calcularReparacion(telefono1)
     reparacion1.autorizarReparacion();
-   console.log(reparacion1);
-    //reparacion1.calcularAbonoInicial();
-    // 
+   //console.log(reparacion1);
 }
