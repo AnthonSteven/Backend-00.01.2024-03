@@ -1,0 +1,26 @@
+div{
+    background-color: rgb(173, 221, 245);
+}
+
+.entrada{
+    border-color: cadetblue;
+    margin-top: 1px;
+    width: 80%;
+}
+
+.entrada::placeholder{
+    color: white;
+}
+
+#iddiagnostico{
+    width: 250px;
+}
+
+#idabono{
+    width: 250px;
+}
+
+#listaMovil{
+    background-color: lightgray;
+    color: black;
+}

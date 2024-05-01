@@ -1,0 +1,79 @@
+.titulos {
+    text-align: center;
+    color: #007bff; /* Color azul prominente */
+    margin-bottom: 20px; /* Aumentar el espacio entre títulos y contenido */
+    font-size: 36px; /* Tamaño de fuente más grande para títulos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    font-family: 'Arial Black', sans-serif; /* Fuente personalizada */
+    background: linear-gradient(45deg, #007bff, #00bfff); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip de fondo para aplicar gradiente */
+    -webkit-text-fill-color: transparent; /* Color de texto transparente para aplicar gradiente */
+    animation: fadeIn 4s ease; /* Animación de desvanecimiento */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+    background-color: #f8f9fa; /* Color de fondo ligeramente más claro */
+} 
+
+/* Estilos para encabezados de tabla */
+.table th {
+    font-weight: bold; /* Texto en negrita para encabezados */
+}
+
+/* Ajustes para tablas */
+.table {
+    width: 100%;
+    margin-bottom: 80px; /* Mayor espacio inferior */
+    color: #333;
+    background-color: #fff;
+    border-collapse: collapse;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evitar que los bordes redondeados afecten a los bordes internos */
+    
+    
+}
+
+.table th, .table td {
+    padding: 12px; /* Aumentar el espacio dentro de las celdas */
+    vertical-align: middle; /* Alinear verticalmente el contenido */
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.075);
+}
+
+/* Estilos para botones dentro de las celdas */
+.table .btn {
+    padding: 6px 12px; /* Reducir el relleno de los botones */
+    font-size: 14px; /* Tamaño de fuente más pequeño para botones */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para los botones en celdas de acción */
+.btn-action {
+    margin-right: 8px; /* Espacio entre botones */
+}

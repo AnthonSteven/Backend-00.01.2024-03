@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Servicio de reparación de celulares</h1>
+
+        <form>
+            <label>N°serie</label>
+            <select id="serieSelect" class="serieSelect">
+                <option class="serie"></option>
+                <option class="serie"></option>
+                <option class="serie"></option>
+                <option class="serie"></option>
+                <option class="serie"></option>
+                <option class="serie"></option>
+            </select>
+
+            <label>IMEI</label>
+            <select id="imeiSelect">
+                <option id="imei">49JN409K5FJ</option>
+            </select>
+
+            <input type="submit" value="continuar" id="continuar">
+        </form>
+        <div class="selectEstados">
+            <select id="selectEstados" style="display: none;">
+                <option class="estado">Diagnostico</option>
+                <option class="estado" selected>Reparación</option>
+                <option class="estado">R. + repuestos</option>
+            </select>
+        </div>
+
+        <div class="diagnostico" id="diagnostico">
+            <p id="marca" class="cajaDiag"></p>
+            <p id="nSerie" class="cajaDiag"></p>
+            <p id="IMEI" class="cajaDiag"></p>
+            <p id="estadoBateria" class="cajaDiag"></p>
+            <p id="estadoBocinas" class="cajaDiag"></p>
+            <p id="estadoPantalla" class="cajaDiag"></p>
+            <p id="estadoConexiones" class="cajaDiag"></p>
+            <p id="estadoCarga" class="cajaDiag"></p>
+            <div class="reparaciones" id="reparaciones">
+                
+            </div>
+            <button id="continuar2">continuar</button>
+        </div>
+
+
+
+        <div class="info" id="info">
+            <input id="firma" type="text" placeholder="firma">
+            <p>Técnico asignado: <span id="tecnicoNombre"></span>Especialidad: <span id="tecnicoEspecialidad"></span>
+            </p>
+            <p>Pago por adelantado: S/.<span id="precio" style="font-size: 16px; font-weight: bold;"></span></p>
+            <input type="submit" value="pagar" id="btnPagar">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

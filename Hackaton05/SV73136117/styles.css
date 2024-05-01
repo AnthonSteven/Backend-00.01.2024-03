@@ -1,0 +1,85 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #ECF0F1;
+}
+
+*,
+*:before,
+*:after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: inherit;
+}
+.wrapper{
+    background-color: #2C3E50;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 400px;
+    padding-bottom: 30px;
+}
+.wrapper *{
+    margin: 0 auto;
+    text-align: center;
+}
+.wrapper h1{
+    color: #FBFCFC;
+    font-size: 40px;
+    margin: 0px 0px 30px 0px;
+}
+.wrapper form label,
+.info p{
+    color: #FBFCFC;
+}
+.wrapper form select,
+.wrapper form input{
+    padding: 8px;
+    border-radius: 5px;
+}
+.serieSelect .serie{
+    text-align: left;
+}
+.selectEstados{
+    margin-top: 10px;
+}
+.diagnostico {
+    display: none;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 20px;
+}
+
+.diagnostico p {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+}
+.diagnostico button{
+    width: 100px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.diagnostico .reparaciones{
+    display: block;
+    padding-top: 5px;
+    width: 100%;
+    color: #ECF0F1;
+    font-size: 14px;
+}
+.info{
+    display: none;
+    width: 60%;
+    padding: 20px 0px;
+    font-size: 12px;
+}
+.info input{
+    padding: 3px;
+}
+.info span{
+    margin-right: 8px;
+}
+.info p{
+    line-height: 30px;
+}
+
