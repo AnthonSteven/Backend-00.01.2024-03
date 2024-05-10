@@ -27,19 +27,17 @@ class Reparacion {
     autorizarReparacion() { // primera parte para autorizar
         // console.log(this.telefono.autorizacion);
         // console.log(this.telefono.abono);
-        // console.log(this.calcularAbonoInicial(telefono))
+        //console.log(this.calcularAbonoInicial())
         if (this.telefono.autorizacion && this.telefono.abono >= this.calcularAbonoInicial()) {
             this.estado = 'En Reparación'
         } else {
             console.log('La autorizacion y/o abono son diferentes.')
         }
     }
-    calcularAbonoInicial() {
+    calcularAbonoInicial(telefono) {
         return 0.5 * this.tecnico.calcularReparacion(this.telefono);  // segunda parte para autorizar
     }
 }
-
-// let marca = ['Samsung','Oppo', 'Huawei' ]
 
 class Tecnico {
     constructor(nombre, skills) {

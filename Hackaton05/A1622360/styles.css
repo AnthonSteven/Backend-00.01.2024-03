@@ -20,7 +20,7 @@ h1 {
 }
 
 .button-group, .checkbox-group, .select-group, .status-group {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 .button-group button, .checkbox-group input[type="checkbox"], .checkbox-group label, .select-group select {
