@@ -23,53 +23,53 @@ function mostrarReto2() {
                 <h2>Ejercicio 1</h2>
                 <p>Utilizando función arrow, crear una función que reciba como parámetros un nombre, apellido y edad y los retorne en un string concatenado.</p> 
                 <p>“Hola mi nombre es Kevin Tenazoa Cuba y mi edad es 27</p>
-                <button onclick="problema(1)">Respuesta</button>
+                <button onclick="problema1()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 2</h2>
                 <p>Crea una función que tome números y devuelva la suma de sus cubos.</p> 
                 <p>sumOfCubes(1, 5, 9) ➞ 855 // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855</p>
-                <button onclick="problema(2)">Respuesta</button>
+                <button onclick="problema2()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 3</h2>
                 <p>Crear una funcion que me retorne el tipo de valor entregado, invocar la función para los distintos tipos de js.</p> 
-                <button onclick="problema(3)">Respuesta</button>
+                <button onclick="problema3()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 4</h2>
                 <p>Crear una función que reciba n cantidad de argumentos y los sume (utilizar parametros rest.)</p>
-                <button onclick="problema(4)">Respuesta</button>
+                <button onclick="problema4()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 5</h2>
                 <p>Crear una función que reciba un array de valores y filtre los valores que no son string.</p> 
-                <button onclick="problema5(5)">Respuesta</button>
+                <button onclick="problema5()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 6</h2>
                 <p>Cree una función que tome una matriz de números y devuelva los números mínimos y máximos, en ese orden.</p> 
                 <p>minMax([1, 2, 3, 4, 5]) ➞ [1, 5]</p>                
-                <button onclick="problema(6)">Respuesta</button>
+                <button onclick="problema6()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 7</h2>
                 <p>Escriba una función que tome una matriz de 10 enteros (entre 0 y 9) y devuelva una cadena en forma de un número de teléfono.</p> 
                 <p>formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞ "(123) 456-7890"</p> 
-                <button onclick="problema(7)">Respuesta</button>
+                <button onclick="problema7()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 8</h2>
                 <p>Cree una función que tome una matriz de matrices con números. Devuelve una nueva matriz (única) con el mayor número de cada uno.</p> 
                 <p>findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 2]</p>                
-                <button onclick="problema(8)">Respuesta</button>
+                <button onclick="problema8()">Respuesta</button>
             </div>
 
             <div class="question-container1">
@@ -77,14 +77,14 @@ function mostrarReto2() {
                 <p>Dada una palabra, escriba una función que devuelva el primer índice y el último índice de un carácter.</p> 
                 charIndex("hello", "l") ➞ [2, 3]</p> 
                 <p>// The first "l" has index 2, the last "l" has index 3.</p>
-                <button onclick="problema(9)">Respuesta</button>
+                <button onclick="problema9()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 10</h2>
                 <p>Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.</p> 
                 <p>toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]</p>                 
-                <button onclick="problema(10)">Respuesta</button>
+                <button onclick="problema10()">Respuesta</button>
             </div>
 
             <div class="question-container1">
@@ -95,7 +95,7 @@ function mostrarReto2() {
                 <p>{name: "Steve",  age: 32, budget: 40000 },</p>
                 <p>{name: "Martin",  age: 16, budget: 2700 }</p>
                 <p>]) ➞ 65700</p>                   
-                <button onclick="problema(11)">Respuesta</button>
+                <button onclick="problema11()">Respuesta</button>
             </div>
 
             
@@ -104,67 +104,67 @@ function mostrarReto2() {
             <div class="question-container1">
             <h2>Ejercicio 12</h2>
             <p>Cree una función que tome una matriz de estudiantes y devuelva una matriz de nombres de estudiantes.</p> 
-            <button onclick="problema(12)">Respuesta</button>
+            <button onclick="problema12()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 13</h2>
                 <p>Escriba una función que convierta un objeto en una matriz de claves y valores.</p> 
-                <button onclick="problema(13)">Respuesta</button>
+                <button onclick="problema13()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 14</h2>
                 <p>Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados  incluyendo n.</p> 
-                <button onclick="problema(14)">Respuesta</button>
+                <button onclick="problema14()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 15</h2>
                 <p>Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada.</p> 
-                <button onclick="problema(15)">Respuesta</button>
+                <button onclick="problema15()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 16</h2>
                 <p>Cree una función que tome un número como argumento y devuelva una matriz de números contando desde este número a cero.</p> 
-                <button onclick="problema(16)">Respuesta</button>
+                <button onclick="problema16()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 17</h2>
                 <p>Cree una función que tome una matriz y devuelva la diferencia entre los números más grandes y más pequeños.</p> 
-                <button onclick="problema(17)">Respuesta</button>
+                <button onclick="problema17()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 18</h2>
                 <p>Cree una función que filtre las cadenas de una matriz y devuelva una nueva matriz que solo contenga enteros.</p> 
-                <button onclick="problema(18)">Respuesta</button>
+                <button onclick="problema18()">Respuesta</button>
             </div>
 
             <div class="question-container1">
                 <h2>Ejercicio 19</h2>
                 <p>Cree una función que tome dos argumentos (elemento, tiempos). El primer argumento (elemento) es el elemento que necesita repetirse, mientras que el segundo argumento (veces) es la cantidad de veces que se debe repetir el elemento. Devuelve el resultado en una matriz.</p> 
-                <button onclick="problema(19)">Respuesta</button>
+                <button onclick="problema19()">Respuesta</button>
             </div>
 
             <div class="question-container1">
             <h2>Ejercicio 20</h2>
             <p>Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las vocales en una cadena con una vocal especificada.</p> 
-            <button onclick="problema(20)">Respuesta</button>
+            <button onclick="problema20()">Respuesta</button>
         </div>
 
         <div class="question-container1">
         <h2>Ejercicio 21</h2>
         <p>Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta: "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!"</p> 
-        <button onclick="problema(21)">Respuesta</button>
+        <button onclick="problema21()">Respuesta</button>
     </div>
 
         <div class="question-container1">
         <h2>Ejercicio 22</h2>
         <p>Cree una función que capitalice la última letra de cada palabra.</p> 
-        <button onclick="problema(22)">Respuesta</button>
+        <button onclick="problema22()">Respuesta</button>
         </div>
 
         <div>
@@ -180,7 +180,7 @@ function mostrarReto2() {
     document.getElementById("contenidoReto").classList.add("reto1-content");
 }
 // Función para ejecutar las soluciónes de los ejercicios
-function problema(nroProblema) {
+function pmaroble(nroProblema) {
     switch (nroProblema) {
         case 1:
             problema1();

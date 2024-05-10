@@ -9,6 +9,24 @@ body {
 }
 
 
+
+.row {
+    display: flex; /* Hacer que los elementos se muestren como una fila */
+    justify-content: center;
+    align-items: center; /* Centrar los elementos verticalmente */
+    
+    
+}
+
+
+.btn2 {
+    width: 200px; /* Ancho deseado para los botones */
+}
+
+
+
+
+
 /* Animación para el título de bienvenida */
 .Hackaton01 {
     animation: fadeInUp 1.5s ease;
