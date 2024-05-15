@@ -1,4 +1,28 @@
-select * from tbl_usuario
+--use prueba;
+
+--drop database prueba2;
+
+--create database prueba2;
+--use prueba2;
+
+
+create table tbl_usuario(
+	id int identity(1,1) primary key,
+	username varchar(50) not null unique,
+	password varchar(100) not null,
+	email varchar(100) not null unique,
+	activo bit not null default 1,
+	usuarioCreacion int  NOT NULL,
+	fechaCreacion datetime default getdate() NOT NULL,
+	usuarioModificacion int NULL,
+	fechaModificacion datetime NULL,
+	constraint fk_usuarioCreacion FOREIGN key(usuarioCreacion) references tbl_usuario(id),
+	constraint fk_usuarioModificacion FOREIGN key(usuarioModificacion) references tbl_usuario(id)
+
+)
+
+insert into tbl_usuario(username, password, email,usuarioCreacion)
+values('rpineda','0987654321', 'rpineda@x-codec.net', 1)
 
 create table tbl_color(
 	id int IDENTITY(1,1) primary key ,
@@ -17,7 +41,6 @@ insert into tbl_color(descripcion, usuarioCreacion)
 values('Blanco',1);
 
 select * from tbl_color;
-
 
 
 create table tbl_especie(
@@ -190,7 +213,7 @@ CREATE table tbl_mascotas(
 )
 
 insert into tbl_mascotas(nombre, fechaNacimiento,idRaza,idColor, idEspecie, idPropietario,usuarioCreacion)
-values('Pancho', null,1, 1,1,2,1);
+values('Pancho', null,1, 1,1,1,1);
 
 select * from tbl_mascotas;
 
