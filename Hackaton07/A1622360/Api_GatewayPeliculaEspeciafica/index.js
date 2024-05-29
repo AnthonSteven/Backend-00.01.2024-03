@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const tmdbApiKey = process.env.TMDB_API_KEY; 
 
 app.get('/peliculasEstreno', async(req, res) => {

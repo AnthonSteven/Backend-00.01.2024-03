@@ -1,0 +1,14 @@
+use d19423;
+#Primera compra
+db.materia_prima.insertOne({
+    nombre:"Tablon de Pino",
+    costo: 30,
+    cantidad: 10
+})
+#segunda compra
+db.materia_prima.updateOne({
+    nombre:"Tablon de Pino"}, 
+    $inc: {
+        cantidad:5 
+        }
+    );

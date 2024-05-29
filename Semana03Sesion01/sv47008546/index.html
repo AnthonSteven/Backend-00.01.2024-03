@@ -989,6 +989,280 @@ document.getElementById("demo").innerHTML = html;
 
 
 
+
+<h1>Creating JavaScript Objects</h1>
+<h2>Using an Object Literal</h2>
+<p id="demo"></p>
+<script>
+// Create an empty Object
+const person1 = {};
+// Add Properties
+person1.firstName = "John";
+person1.lastName = "Doe";
+person1.age = 50;
+person1.eyeColor = "blue"; 
+// Display Data from Object
+document.getElementById("demo").innerHTML =
+person1.firstName + " is " + person1.age + " years old.";
+</script>
+
+
+<h1>JavaScript Objects</h1>
+<h2>Object Methods</h2>
+<p>A method is a function definition stored as a property value.</p>
+<p id="demo"></p>
+<script>
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+
+
+
+<h1>JavaScript Objects</h1>
+<h2>Adding a Method</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+};
+
+// Add a Method
+person.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+// Display Object Data
+document.getElementById("demo").innerHTML =
+"My father is " + person.name(); 
+</script>
+
+
+<h1>JavaScript Objects</h1>
+<p>Displaying a JavaScript object will output [object Object]:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Display Object
+document.getElementById("demo").innerHTML = person;
+</script>
+
+
+
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor Function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create a Person object
+const myFather = new Person("John", "Doe", 50, "blue");
+
+// Display age
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.firstName + "."; 
+</script>
+
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+// Create two Person objects
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+// Display age
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + ". My mother is " + myMother.age + "."; 
+</script>
+
+
+
+
+
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person objects
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+// Add nationality to first object
+myFather.nationality = "English";
+
+// Display nationality 
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.nationality; 
+</script>
+
+
+
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor Function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.fullName = function() {
+    return this.firstName + " " + this.lastName
+  };
+}
+// Create a Person object
+const myFather = new Person("John", "Doe", 50, "blue");
+// Display full name
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.fullName(); 
+</script>
+
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor function for Person Objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+// Create 2 Person objects
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+// Add a Name Method
+myMother.changeName = function (name) {
+  this.lastName = name;
+}
+// Change Name
+myMother.changeName("Doe");
+// Display fullName
+document.getElementById("demo").innerHTML =
+"My mother's last name is " + myMother.lastName; 
+</script>
+
+
+
+<h2>JavaScript Numbers</h2>
+
+<p>Infinity is returned if you calculate a number outside the largest possible number:</p>
+
+<p id="demo"></p>
+
+<script>
+let myNumber = 2; 
+let txt = "";
+while (myNumber != Infinity) {
+   myNumber = myNumber * myNumber;
+   txt = txt + myNumber + "<br>";
+}
+document.getElementById("demo").innerHTML = txt;
+</script>
+
+
+<h2>JavaScript Numbers</h2>
+
+<p>The toString() method can output numbers from base 2 to 36:</p>
+
+<p id="demo"></p>
+
+<script>
+let myNumber = 32;
+document.getElementById("demo").innerHTML =
+"Decimal 32 = " + "<br><br>" + 
+
+"Hexatrigesimal (base 36): " + myNumber.toString(36) + "<br>" +
+"Duotrigesimal (base 32): " + myNumber.toString(32) + "<br>" +
+"Hexadecimal (base 16): " + myNumber.toString(16) + "<br>" +
+"Duodecimal (base 12): " + myNumber.toString(12) + "<br>" +
+"Decimal (base 10): " + myNumber.toString(10) + "<br>" +
+"Octal (base 8): " + myNumber.toString(8) + "<br>" +
+"Binary (base 2): " + myNumber.toString(2);
+</script>
+
+Decimal 32 =
+
+Hexatrigesimal (base 36): w
+Duotrigesimal (base 32): 10
+Hexadecimal (base 16): 20
+Duodecimal (base 12): 28
+Decimal (base 10): 32
+Octal (base 8): 40
+Binary (base 2): 100000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
