@@ -38,5 +38,5 @@ call SP_CRUD_COLOR(1,'Atigrado',null,null,1);
 call SP_CRUD_COLOR(2,null,null,null,null);
 call SP_CRUD_COLOR(3,'Negrito',1, 2,1);
 call SP_CRUD_COLOR(4,null,null, 2,1);
-select * from tbl_color;
+
 
