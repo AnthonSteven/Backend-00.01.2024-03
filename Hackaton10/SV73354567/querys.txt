@@ -1,0 +1,145 @@
+use 73354567;
+
+// Crear y poblar la colección compras_materia_prima
+db.compras_materia_prima.insertMany([
+  {
+    "proveedor": "Proveedor A",
+    "fecha_compra": ISODate("2023-05-01T00:00:00Z"),
+    "cantidad": 100,
+    "precio_unitario": 50,
+    "descripcion": "Madera de roble"
+  },
+  {
+    "proveedor": "Proveedor B",
+    "fecha_compra": ISODate("2023-06-15T00:00:00Z"),
+    "cantidad": 200,
+    "precio_unitario": 30,
+    "descripcion": "Madera de pino"
+  },
+  {
+    "proveedor": "Proveedor A",
+    "fecha_compra": ISODate("2023-07-10T00:00:00Z"),
+    "cantidad": 150,
+    "precio_unitario": 45,
+    "descripcion": "Madera de cerezo"
+  },
+  {
+    "proveedor": "Proveedor C",
+    "fecha_compra": ISODate("2023-08-20T00:00:00Z"),
+    "cantidad": 300,
+    "precio_unitario": 25,
+    "descripcion": "Madera de abeto"
+  }
+]);
+
+// Crear y poblar la colección compras_insumos
+db.compras_insumos.insertMany([
+  {
+    "proveedor": "Proveedor C",
+    "fecha_compra": ISODate("2023-05-05T00:00:00Z"),
+    "cantidad": 50,
+    "precio_unitario": 20,
+    "descripcion": "Clavos"
+  },
+  {
+    "proveedor": "Proveedor D",
+    "fecha_compra": ISODate("2023-06-20T00:00:00Z"),
+    "cantidad": 100,
+    "precio_unitario": 10,
+    "descripcion": "Tornillos"
+  },
+  {
+    "proveedor": "Proveedor E",
+    "fecha_compra": ISODate("2023-07-15T00:00:00Z"),
+    "cantidad": 200,
+    "precio_unitario": 5,
+    "descripcion": "Bisagras"
+  },
+  {
+    "proveedor": "Proveedor F",
+    "fecha_compra": ISODate("2023-08-10T00:00:00Z"),
+    "cantidad": 150,
+    "precio_unitario": 15,
+    "descripcion": "Lijas"
+  }
+]);
+
+// Crear y poblar la colección gestion_personal
+db.gestion_personal.insertMany([
+  {
+    "nombre": "Juan Perez",
+    "puesto": "Carpintero",
+    "fecha_contratacion": ISODate("2021-01-10T00:00:00Z"),
+    "salario": 1500,
+    "departamento": "Producción"
+  },
+  {
+    "nombre": "Maria Lopez",
+    "puesto": "Supervisor",
+    "fecha_contratacion": ISODate("2020-03-15T00:00:00Z"),
+    "salario": 2000,
+    "departamento": "Calidad"
+  },
+  {
+    "nombre": "Carlos Gomez",
+    "puesto": "Diseñador",
+    "fecha_contratacion": ISODate("2019-06-01T00:00:00Z"),
+    "salario": 1800,
+    "departamento": "Diseño"
+  },
+  {
+    "nombre": "Luisa Martinez",
+    "puesto": "Operario",
+    "fecha_contratacion": ISODate("2022-11-21T00:00:00Z"),
+    "salario": 1200,
+    "departamento": "Producción"
+  }
+]);
+
+// Crear y poblar la colección produccion
+db.produccion.insertMany([
+  {
+    "fecha_produccion": ISODate("2023-05-10T00:00:00Z"),
+    "producto": "Armario de roble",
+    "cantidad_producida": 10,
+    "materia_prima_usada": [
+      { "tipo": "Madera de roble", "cantidad": 50 }
+    ],
+    "insumos_usados": [
+      { "tipo": "Clavos", "cantidad": 5 }
+    ]
+  },
+  {
+    "fecha_produccion": ISODate("2023-06-25T00:00:00Z"),
+    "producto": "Armario de pino",
+    "cantidad_producida": 20,
+    "materia_prima_usada": [
+      { "tipo": "Madera de pino", "cantidad": 100 }
+    ],
+    "insumos_usados": [
+      { "tipo": "Tornillos", "cantidad": 10 }
+    ]
+  },
+  {
+    "fecha_produccion": ISODate("2023-07-30T00:00:00Z"),
+    "producto": "Armario de cerezo",
+    "cantidad_producida": 15,
+    "materia_prima_usada": [
+      { "tipo": "Madera de cerezo", "cantidad": 75 }
+    ],
+    "insumos_usados": [
+      { "tipo": "Bisagras", "cantidad": 7 }
+    ]
+  },
+  {
+    "fecha_produccion": ISODate("2023-08-15T00:00:00Z"),
+    "producto": "Armario de abeto",
+    "cantidad_producida": 25,
+    "materia_prima_usada": [
+      { "tipo": "Madera de abeto", "cantidad": 125 }
+    ],
+    "insumos_usados": [
+      { "tipo": "Lijas", "cantidad": 10 }
+    ]
+  }
+]);

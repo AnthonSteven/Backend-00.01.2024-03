@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6656c55ad9696d7a9a91456b"
+  },
+  "proveedor": "Proveedor A",
+  "fecha_compra": {
+    "$date": "2023-05-01T00:00:00.000Z"
+  },
+  "cantidad": 100,
+  "precio_unitario": 50,
+  "descripcion": "Madera de roble"
+},
+{
+  "_id": {
+    "$oid": "6656c55ad9696d7a9a91456c"
+  },
+  "proveedor": "Proveedor B",
+  "fecha_compra": {
+    "$date": "2023-06-15T00:00:00.000Z"
+  },
+  "cantidad": 200,
+  "precio_unitario": 30,
+  "descripcion": "Madera de pino"
+},
+{
+  "_id": {
+    "$oid": "6656c55ad9696d7a9a91456d"
+  },
+  "proveedor": "Proveedor A",
+  "fecha_compra": {
+    "$date": "2023-07-10T00:00:00.000Z"
+  },
+  "cantidad": 150,
+  "precio_unitario": 45,
+  "descripcion": "Madera de cerezo"
+},
+{
+  "_id": {
+    "$oid": "6656c55ad9696d7a9a91456e"
+  },
+  "proveedor": "Proveedor C",
+  "fecha_compra": {
+    "$date": "2023-08-20T00:00:00.000Z"
+  },
+  "cantidad": 300,
+  "precio_unitario": 25,
+  "descripcion": "Madera de abeto"
+}]

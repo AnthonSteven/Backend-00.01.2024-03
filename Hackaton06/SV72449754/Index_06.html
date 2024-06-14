@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Tecnico</title>
+    <link rel="stylesheet" href="Styles_06.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
+</head>
+
+
+<body>
+    
+    <h3>SERVICIO TECNICO</h3>
+    <h4>JSR S.A.C.</h4>
+    <button id="Btn_ClearCeluar">Agregar Cliente</button>
+    </br>
+    <P></P>
+    <div><h4>AREAS DEL SOSPORTE TECNICO</h4></div>
+    <button id="verAreaInicial">Area de Espera</button>
+    <button id="verAreaEnsamblaje">Area Ensamblaje</button>
+    <button id="verAreaSoftware">Area Software</button>
+    <button id="verAreaEntrega">Area Entrega</button>
+    </br>
+    <P></P>
+    
+    <div id="infoCliente" class="wrapper fadeInDown" style="display: none;">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+    
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <h1 id="Nombre">Nuevo Cliente</h1>
+          </div>
+    
+          <!-- Login Form -->
+          <form>
+          <label  for="nombreCliente" class="Inp_Label">Nombre</label> <input type="text" id="nombreCliente" class="fadeIn second" name="login" placeholder="username" value="Nombre"> 
+          </br>
+          <label for="DocumentoCliente" class="Inp_Label">Documento</label><input type="text" id="DocumentoCliente" class="fadeIn third" name="login" placeholder="password"value="Documento"> 
+          </br>
+          <label for="equipoCliente" class="Inp_Label">Dispositivo</label><input type="text" id="equipoCliente" class="fadeIn forth" name="login" placeholder="password" value="Equipo"> 
+          </br>
+          <label for="Dx01Cliente" class="Inp_Label">Diagnostico</label><input type="text" id="Dx01Cliente" class="fadeIn five" name="login" placeholder="password" value="Diagnostico"> 
+          </br>
+          <label for="TecnicoCliente" class="Inp_Label">Tecnico a cargo</label></br>
+          <textarea name="login" id="TecnicoCliente" class="AreaTexto" cols="49" rows="8" placeholder="password" value="Tecnico"></textarea> 
+    
+          </form>
+    
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" id="cerrarVentana" href="#">Cerrar</a>
+          </div>
+    
+        </div>
+      </div>
+
+    
+
+    <div id="tblAreaInicial" style="display: none;">
+      <h4>*Area Inicial de Espera</h4>
+      <table id="table" data-detail-view="true" data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="Cod_Servicio">CODIGO</th>
+            <th data-field="Cliente.Usuario.Nombre">CLIENTE</th>
+            <th data-field="Cliente.Descripcion" >EQUIPO</th>
+            <th data-field="Diagnostico">DIAGNOSTICOS</th>
+            <th data-field="operate" data-formatter="AreaInicialFormatter" data-events="AreaInicialEvents">ACCIONES</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    
+    <P></P>
+
+    <div id="tblAreaEnsamblaje" style="display: none;">
+      <h4>*Area de Ensamblaje y Circuiteria</h4>
+      <table id="tableEnsamblaje" data-detail-view="true" data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="Cod_Servicio">CODIGO</th>
+            <th data-field="Cliente.Usuario.Nombre">CLIENTE</th>
+            <th data-field="Cliente.Descripcion" >EQUIPO</th>
+            <th data-field="Diagnostico">DIAGNOSTICOS</th>
+            <th data-field="operate" data-formatter="AreaEnsamblajeFormatter" data-events="AreaEnsamblajeEvents">ACCIONES</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <P></P>
+
+    <div id="tblAreaSoftware" style="display: none;">
+      <h4>*Area de Software</h4>
+      <table id="tableSoftware" data-detail-view="true" data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="Cod_Servicio">CODIGO</th>
+            <th data-field="Cliente.Usuario.Nombre">CLIENTE</th>
+            <th data-field="Cliente.Descripcion" >EQUIPO</th>
+            <th data-field="Diagnostico">DIAGNOSTICOS</th>
+            <th data-field="operate" data-formatter="AreaSoftwareFormatter" data-events="AreaSoftwareEvents">ACCIONES</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div id="tblAreaEntrega" style="display: none;">
+      <h4>*Area de Entrega</h4>
+      <table id="tableEntrega" data-detail-view="true" data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th data-field="Cod_Servicio">CODIGO</th>
+            <th data-field="Cliente.Usuario.Nombre">CLIENTE</th>
+            <th data-field="Cliente.Descripcion" >EQUIPO</th>
+            <th data-field="Diagnostico">DIAGNOSTICOS</th>
+            <th data-field="operate" data-formatter="AreaEntregaFormatter" data-events="AreaEntregaEvents">ACCIONES</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <P></P>
+
+    
+    <div id="CtnResumen"  style="display: none;">
+      <div id="tlbResumen">
+
+        <!-- Icon -->
+        <div >
+          <h4>RESUMEN DEL SERVICIO</h4>
+        </div>
+  
+        <!-- Resumen -->
+        <div>
+          <table id="talbeResumen">
+            <tr>
+              <td>CODIGO:</td>
+              <td id="td_Codigo" class="td_Datos"></td>
+            </tr>
+
+            <tr>
+              <td>CLIENTE:</td>
+              <td id="td_Cliente" class="td_Datos"></td>
+              
+            </tr>
+            <tr>
+              <td>EQUIPO:</td>
+              <td id="td_Equipo" class="td_Datos"></td>
+            </tr>
+    
+            <tr>
+              <td>DIAGNOSTICO:</td>
+              <td id="td_Diagnostico" class="td_Datos"></td>
+            </tr>
+    
+            <tr>
+              <td>REPUESTOS:</td>
+              <td id="td_Repuestos" class="td_Datos"></td>
+            </tr>
+    
+            <tr>
+              <td>TOTAL A PAGAR:</td>
+              <td id="td_Precio" class="td_Datos"></td>
+            </tr>
+          </table>
+        </div>
+       
+        <!-- Boton Cerrar cuadro de Resumen -->
+        <div >
+        <a  id="cerrarResumen" href="#">Cerrar</a>
+        </div>
+  
+      </div>
+    </div>
+   
+
+
+
+    
+
+    <script src="https://kit.fontawesome.com/e59191e4cc.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
+    <script src="Script_06.js"></script>
+    <SCript>
+        const ObjReparacion = FunctionAnonima.init()
+    </SCript>
+    
+</body>
+</html>

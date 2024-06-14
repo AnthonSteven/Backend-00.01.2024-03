@@ -1,0 +1,55 @@
+// Consultas en MONGOSH
+
+use SV73354567;
+
+// 1. Consulta para obtener todas las compras de materia prima
+db.compras_materia_prima.find({}).pretty();
+
+// 2. Consulta para obtener todas las compras de insumos
+db.compras_insumos.find({}).pretty();
+
+// 3. Consulta para obtener todos los empleados del departamento de Producción
+db.gestion_personal.find({ "departamento": "Producción" }).pretty();
+
+// 4. Consulta para obtener toda la producción de "Armario de roble"
+db.produccion.find({ "producto": "Armario de roble" }).pretty();
+
+// 5. Consulta para actualizar el salario de "Juan Perez" a 1600
+db.gestion_personal.updateOne(
+  { "nombre": "Juan Perez" },
+  { $set: { "salario": 1600 } }
+);
+
+// 6. Consulta para eliminar las compras de insumos con proveedor "Proveedor F"
+db.compras_insumos.deleteMany({ "proveedor": "Proveedor F" });
+
+// 7. Consulta para agregar una nueva compra de materia prima
+db.compras_materia_prima.insertOne({
+  "proveedor": "Proveedor D",
+  "fecha_compra": ISODate("2023-09-01T00:00:00Z"),
+  "cantidad": 250,
+  "precio_unitario": 40,
+  "descripcion": "Madera de nogal"
+});
+
+// 8. Consulta para agregar un nuevo empleado
+db.gestion_personal.insertOne({
+  "nombre": "Pedro Ramirez",
+  "puesto": "Carpintero",
+  "fecha_contratacion": ISODate("2023-01-15T00:00:00Z"),
+  "salario": 1400,
+  "departamento": "Producción"
+});
+
+// 9. Consulta para obtener la producción total de todos los productos
+db.produccion.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalProduccion: { $sum: "$cantidad_producida" }
+    }
+  }
+]);
+
+// 10. Consulta para obtener la compra de insumos más reciente
+db.compras_insumos.find({}).sort({ "fecha_compra": -1 }).limit(1).pretty();

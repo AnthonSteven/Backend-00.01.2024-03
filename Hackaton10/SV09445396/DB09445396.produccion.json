@@ -1,0 +1,244 @@
+[{
+  "_id": {
+    "$oid": "66533e51404641712d9680e5"
+  },
+  "producto": "Armario",
+  "fecha_ini": "25-05-2024",
+  "fecha_fin": "30-05-2024",
+  "dias_trab": 5,
+  "cantidad": 3,
+  "materia_prima": [
+    {
+      "nombre": "Cedro",
+      "cantidad": 9,
+      "unidad": "m3"
+    },
+    {
+      "nombre": "Tornillo",
+      "cantidad": 3,
+      "unidad": "m3"
+    }
+  ],
+  "insumos": [
+    {
+      "nombre": "cla_1",
+      "cantidad": 1,
+      "unidad": "1Kg"
+    },
+    {
+      "nombre": "tor_1",
+      "cantidad": 1,
+      "unidad": "1Kg"
+    },
+    {
+      "nombre": "cola",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    },
+    {
+      "nombre": "lij_80",
+      "cantidad": 20,
+      "unidad": "und"
+    },
+    {
+      "nombre": "lij_180",
+      "cantidad": 15,
+      "unidad": "und"
+    },
+    {
+      "nombre": "Barniz",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    }
+  ],
+  "personal": [
+    {
+      "codper": "P001",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P004",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P005",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66534dec404641712d9680e6"
+  },
+  "producto": "Silla de comedor",
+  "fecha_ini": "25-05-2024",
+  "fecha_fin": "29-05-2024",
+  "dias_trab": 4,
+  "cantidad": 18,
+  "materia_prima": [
+    {
+      "nombre": "Tornillo",
+      "cantidad": 3,
+      "unidad": "m3"
+    }
+  ],
+  "insumos": [
+    {
+      "nombre": "cla_1",
+      "cantidad": 1,
+      "unidad": "1Kg"
+    },
+    {
+      "nombre": "cola",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    },
+    {
+      "nombre": "lij_80",
+      "cantidad": 15,
+      "unidad": "und"
+    },
+    {
+      "nombre": "lij_180",
+      "cantidad": 12,
+      "unidad": "und"
+    },
+    {
+      "nombre": "Barniz",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    }
+  ],
+  "personal": [
+    {
+      "codper": "P002",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P006",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66534df9404641712d9680e7"
+  },
+  "producto": "Modulo de Entretenimiento",
+  "fecha_ini": "25-05-2024",
+  "fecha_fin": "15-06-2024",
+  "dias_trab": 20,
+  "cantidad": 4,
+  "materia_prima": [
+    {
+      "nombre": "Melamina 18mm",
+      "cantidad": 12,
+      "medidas": "215x244"
+    }
+  ],
+  "insumos": [
+    {
+      "nombre": "tor_1",
+      "cantidad": 2,
+      "unidad": "100und"
+    },
+    {
+      "nombre": "De_contacto",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    },
+    {
+      "nombre": "Tap_Delgado",
+      "cantidad": 100,
+      "unidad": "1m"
+    },
+    {
+      "nombre": "Tap_Grueso",
+      "cantidad": 80,
+      "unidad": "1m"
+    }
+  ],
+  "personal": [
+    {
+      "codper": "P001",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P003",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P004",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66534e0a404641712d9680e8"
+  },
+  "producto": "Caballete Plegable",
+  "fecha_ini": "15-06-2024",
+  "fecha_fin": "20-06-2024",
+  "dias_trab": 5,
+  "cantidad": 10,
+  "materia_prima": [
+    {
+      "nombre": "Tornillo",
+      "cantidad": 2,
+      "unidad": "m3"
+    }
+  ],
+  "insumos": [
+    {
+      "nombre": "cla_2",
+      "cantidad": 1,
+      "unidad": "1Kg"
+    },
+    {
+      "nombre": "cola",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    },
+    {
+      "nombre": "lij_80",
+      "cantidad": 10,
+      "unidad": "und"
+    },
+    {
+      "nombre": "lij_180",
+      "cantidad": 7,
+      "unidad": "und"
+    },
+    {
+      "nombre": "bis_3",
+      "cantidad": 20,
+      "unidad": "und"
+    },
+    {
+      "nombre": "Barniz",
+      "cantidad": 1,
+      "unidad": "1Gl"
+    }
+  ],
+  "personal": [
+    {
+      "codper": "P001",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    },
+    {
+      "codper": "P006",
+      "horas_trabajadas": "8",
+      "unidad": "horas"
+    }
+  ]
+}]

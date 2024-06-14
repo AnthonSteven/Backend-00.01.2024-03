@@ -14,7 +14,7 @@ const Sequelize = require("sequelize");
 //     }
 // });
 
-const sequelize = new Sequelize('tutorialdb', 'root', 'pacha2024', {
+const sequelize = new Sequelize('tutorialdb', 'root', 'P@$w0rd25.MySQL', {
     host: 'localhost',
     dialect: 'mysql', 
   });

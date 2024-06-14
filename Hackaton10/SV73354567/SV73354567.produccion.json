@@ -1,0 +1,88 @@
+[{
+  "_id": {
+    "$oid": "6656c5a0d9696d7a9a91457d"
+  },
+  "fecha_produccion": {
+    "$date": "2023-05-10T00:00:00.000Z"
+  },
+  "producto": "Armario de roble",
+  "cantidad_producida": 10,
+  "materia_prima_usada": [
+    {
+      "tipo": "Madera de roble",
+      "cantidad": 50
+    }
+  ],
+  "insumos_usados": [
+    {
+      "tipo": "Clavos",
+      "cantidad": 5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6656c5a0d9696d7a9a91457e"
+  },
+  "fecha_produccion": {
+    "$date": "2023-06-25T00:00:00.000Z"
+  },
+  "producto": "Armario de pino",
+  "cantidad_producida": 20,
+  "materia_prima_usada": [
+    {
+      "tipo": "Madera de pino",
+      "cantidad": 100
+    }
+  ],
+  "insumos_usados": [
+    {
+      "tipo": "Tornillos",
+      "cantidad": 10
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6656c5a0d9696d7a9a91457f"
+  },
+  "fecha_produccion": {
+    "$date": "2023-07-30T00:00:00.000Z"
+  },
+  "producto": "Armario de cerezo",
+  "cantidad_producida": 15,
+  "materia_prima_usada": [
+    {
+      "tipo": "Madera de cerezo",
+      "cantidad": 75
+    }
+  ],
+  "insumos_usados": [
+    {
+      "tipo": "Bisagras",
+      "cantidad": 7
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6656c5a0d9696d7a9a914580"
+  },
+  "fecha_produccion": {
+    "$date": "2023-08-15T00:00:00.000Z"
+  },
+  "producto": "Armario de abeto",
+  "cantidad_producida": 25,
+  "materia_prima_usada": [
+    {
+      "tipo": "Madera de abeto",
+      "cantidad": 125
+    }
+  ],
+  "insumos_usados": [
+    {
+      "tipo": "Lijas",
+      "cantidad": 10
+    }
+  ]
+}]

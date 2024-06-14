@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "66533b8f404641712d9680d2"
+  },
+  "listones": [
+    {
+      "tipo": "Pino 1x1",
+      "costo": 6,
+      "cantidad": 50,
+      "unidad": "pza"
+    },
+    {
+      "tipo": "Pino 2x2",
+      "costo": 12,
+      "cantidad": 50,
+      "unidad": "pza"
+    },
+    {
+      "tipo": "Pino 2x4",
+      "costo": 25,
+      "cantidad": 50,
+      "unidad": "pza"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533b9e404641712d9680d3"
+  },
+  "maderas": [
+    {
+      "tipo": "Nogal",
+      "costo": 300,
+      "cantidad": 100,
+      "unidad": "m3"
+    },
+    {
+      "tipo": "Roble",
+      "costo": 200,
+      "cantidad": 100,
+      "unidad": "m3"
+    },
+    {
+      "tipo": "Cedro",
+      "costo": 150,
+      "cantidad": 141,
+      "unidad": "m3"
+    },
+    {
+      "tipo": "Tornillo",
+      "costo": 100,
+      "cantidad": 192,
+      "unidad": "m3"
+    },
+    {
+      "tipo": "Pino",
+      "costo": 50,
+      "cantidad": 100,
+      "unidad": "m3"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533b9e404641712d9680d4"
+  },
+  "tableros": [
+    {
+      "tipo": "Melamina 15mm",
+      "cantidad": 100,
+      "costo": 240,
+      "medidas": "215x244"
+    },
+    {
+      "tipo": "Melamina 18mm",
+      "cantidad": 188,
+      "costo": 240,
+      "medidas": "215x244"
+    },
+    {
+      "tipo": "Nordex 3mm",
+      "cantidad": 100,
+      "costo": 30,
+      "medidas": "172x244"
+    },
+    {
+      "tipo": "Tripley",
+      "cantidad": 100,
+      "costo": 30,
+      "medidas": "122x244"
+    }
+  ]
+}]

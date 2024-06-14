@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6656c57fd9696d7a9a914577"
+  },
+  "nombre": "Juan Perez",
+  "puesto": "Carpintero",
+  "fecha_contratacion": {
+    "$date": "2021-01-10T00:00:00.000Z"
+  },
+  "salario": 1500,
+  "departamento": "Producción"
+},
+{
+  "_id": {
+    "$oid": "6656c57fd9696d7a9a914578"
+  },
+  "nombre": "Maria Lopez",
+  "puesto": "Supervisor",
+  "fecha_contratacion": {
+    "$date": "2020-03-15T00:00:00.000Z"
+  },
+  "salario": 2000,
+  "departamento": "Calidad"
+},
+{
+  "_id": {
+    "$oid": "6656c57fd9696d7a9a914579"
+  },
+  "nombre": "Carlos Gomez",
+  "puesto": "Diseñador",
+  "fecha_contratacion": {
+    "$date": "2019-06-01T00:00:00.000Z"
+  },
+  "salario": 1800,
+  "departamento": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "6656c57fd9696d7a9a91457a"
+  },
+  "nombre": "Luisa Martinez",
+  "puesto": "Operario",
+  "fecha_contratacion": {
+    "$date": "2022-11-21T00:00:00.000Z"
+  },
+  "salario": 1200,
+  "departamento": "Producción"
+}]

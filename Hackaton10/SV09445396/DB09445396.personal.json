@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "66533c0e404641712d9680dc"
+  },
+  "codper": "P001",
+  "nombre": "Juan",
+  "apellido": "Lucio",
+  "cargo": "Carpintero",
+  "turno": "Mañana"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680dd"
+  },
+  "codper": "P002",
+  "nombre": "Carlos",
+  "apellido": "Sifuentes",
+  "cargo": "Carpintero",
+  "turno": "Tarde"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680de"
+  },
+  "codper": "P003",
+  "nombre": "Luis",
+  "apellido": "Miranda",
+  "cargo": "Diseñador",
+  "turno": "Completo"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680df"
+  },
+  "codper": "P004",
+  "nombre": "Manuel",
+  "apellido": "Perez",
+  "cargo": "Asistente",
+  "turno": "Mañana"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680e0"
+  },
+  "codper": "P005",
+  "nombre": "Pedro",
+  "apellido": "Suarez",
+  "cargo": "Asistente",
+  "turno": "Mañana"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680e1"
+  },
+  "codper": "P006",
+  "nombre": "Enrique",
+  "apellido": "Luna",
+  "cargo": "Asistente",
+  "turno": "Tarde"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680e2"
+  },
+  "codper": "P007",
+  "nombre": "Luisa",
+  "apellido": "Manrique",
+  "cargo": "Ventas",
+  "turno": "Mañana"
+},
+{
+  "_id": {
+    "$oid": "66533c0e404641712d9680e3"
+  },
+  "codper": "P008",
+  "nombre": "Evelyn",
+  "apellido": "Chipana",
+  "cargo": "Ventas",
+  "turno": "Tarde"
+}]

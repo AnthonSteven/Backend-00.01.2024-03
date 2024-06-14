@@ -1,0 +1,102 @@
+ use 002333753;
+
+ db.materiaPrima.insertOne(
+  { nombre: "madera",
+  costo: 80,
+  cantidad: 100        
+  })
+ 
+ db.materiaPrima.find({})
+[
+  {
+    _id: ObjectId('665691292c3945fb1acdcdf6'),
+    nombre: 'Material endeble de pino',
+    costo: 60,
+    cantidad: 2
+  }
+]
+
+db.materiaPrima.insertMany([
+                {
+                        nombre: "regleta",
+                        precio: 80
+
+                },
+...             {
+                        nombre: "pilas",
+...                     precio: 50
+
+...             },
+                {
+...                     nombre: "botas",
+... ... ... ... ...                     precio: 10
+...
+...             }
+                        ])... ... ... ... ...
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('665699e949b27103f5cdcdf7'),
+    '1': ObjectId('665699e949b27103f5cdcdf8'),
+    '2': ObjectId('665699e949b27103f5cdcdf9')
+  }
+}
+
+db.materiaPrima.find({})
+[
+  {
+    _id: ObjectId('665691292c3945fb1acdcdf6'),
+    nombre: 'Material endeble de pino',
+    costo: 60,
+    cantidad: 2
+  },
+  {
+    _id: ObjectId('6656986e49b27103f5cdcdf6'),
+    nombre: 'madera',
+    costo: 80,
+    cantidad: 100
+  },
+  {
+    _id: ObjectId('665699e949b27103f5cdcdf7'),
+    nombre: 'regleta',
+    precio: 80
+  },
+  {
+    _id: ObjectId('665699e949b27103f5cdcdf8'),
+    nombre: 'pilas',
+    precio: 50
+  },
+  {
+    _id: ObjectId('665699e949b27103f5cdcdf9'),
+    nombre: 'botas',
+    precio: 10
+  }
+]
+
+ db.personal.insertMany(
+          [
+                {
+                        nombre:  "Jessica",
+...                     apellido: "Hernandez",
+                        edad: 18
+...             },
+...             {
+                        nombre:  "Pame",
+...                     apellido: "Lopez",
+... ... ... ... ...                     edad: 19
+                },
+                {
+...                     nombre:  "Johana",
+                        apellido: "Lopez",
+...                         edad: 20
+                }
+...       ]
+        )... ... ... ... ... ...
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66569d2e49b27103f5cdcdfa'),
+    '1': ObjectId('66569d2e49b27103f5cdcdfb'),
+    '2': ObjectId('66569d2e49b27103f5cdcdfc')
+  }
+}

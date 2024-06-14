@@ -1,0 +1,602 @@
+#*******************************************
+#       BASE DE DATOS - COLECCIONES        *
+#*******************************************
+use DB09445396
+db.createCollection("materia_prima") 
+db.createCollection("insumos") 
+db.createCollection("personal") 
+db.createCollection("produccion") 
+
+#*******************************************
+#              MATERIA PRIMA               *
+#*******************************************
+
+#*** REGISTRO DE PRIMERA COMPRA ***
+
+db.materia_prima.insertOne({
+    listones:[
+		{tipo:"Pino 1x1",costo:6,cantidad:50,unidad:"pza"},
+		{tipo:"Pino 2x2",costo:12,cantidad:50,unidad:"pza"},
+		{tipo:"Pino 2x4",costo:25,cantidad:50,unidad:"pza"}
+             ]
+    
+})
+
+db.materia_prima.insertMany( [
+
+  { maderas: [ 
+            {tipo: "Nogal", costo:300 ,cantidad: 100,unidad:"m3"}, 
+            {tipo: "Roble", costo:200 ,cantidad: 100,unidad:"m3"}, 
+            {tipo: "Cedro", costo:150 ,cantidad: 100,unidad:"m3"}, 
+            {tipo: "Tornillo", costo:100 , cantidad: 100,unidad:"m3"}, 
+            {tipo: "Pino",  costo:50 ,cantidad: 100,unidad:"m3"}, 
+          ]}, 
+
+  { tableros: [ {tipo: "Melamina 15mm", cantidad:100,costo:240, medidas:"215x244"}, 
+                {tipo: "Melamina 18mm", cantidad:100,costo:240,medidas:"215x244"}, 
+                {tipo: "Nordex 3mm", cantidad:100,costo:30,medidas:"172x244"}, 
+                {tipo: "Tripley", cantidad:100,costo:30,medidas:"122x244"} 
+
+              ] } 
+]) 
+
+#*** REGISTRO DE SEGUNDA COMPRA ***
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Cedro"},
+	{
+	  $inc: { "maderas.$.cantidad": 50 }
+	}
+)
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Tornillo"},
+	{
+	  $inc: { "maderas.$.cantidad": 100 }
+	}
+)
+
+db.materia_prima.updateOne(
+	{ "tableros.tipo" : "Melamina 18mm"},
+	{
+	  $inc: { "tableros.$.cantidad": 100 }
+	}
+)
+
+
+#*******************************************
+#                 INSUMOS                  *
+#*******************************************
+
+#*** REGISTRO DE COMPRAS ***
+
+db.insumos.insertMany([
+  { clavos: [ 
+           {coditm: "cla_1/2",medida: "1/2 pulgada", cantidad: 100,costo:5, unidad:"1Kg"}, 
+           {coditm: "cla_3/4",medida: "3/4 pulgada", cantidad: 100,costo:15, unidad:"1Kg"}, 
+           {coditm: "cla_1",medida: "1 pulgada", cantidad: 100,costo:16, unidad:"1Kg"}, 
+           {coditm: "cla_2",medida: "2 pulgada", cantidad: 100,costo:10, unidad:"1Kg"} 
+          ]},
+
+  {tornillos: [ 
+           {coditm: "tor_1/2",medida: "1/2 pulgada", cantidad: 100,costo:54, unidad:"100und"}, 
+           {coditm: "tor_3/4",medida: "3/4 pulgada", cantidad: 100,costo:70, unidad:"100und"}, 
+           {coditm: "tor_1",medida: "1 pulgada", cantidad: 100,costo:100, unidad:"100und"}, 
+           {coditm: "tor_2",medida: "2 pulgada", cantidad: 100,costo:130, unidad:"100und"} 
+          ]},
+  {lijas: [ 
+           {coditm: "lij_80",lija: "80", cantidad: 100,costo:3, unidad:"und"}, 
+           {coditm: "lij_100",lija: "100", cantidad: 100,costo:3, unidad:"und"}, 
+           {coditm: "lij_180",lija: "180", cantidad: 100,costo:3, unidad:"und"} 
+         ]},
+  {acabados: [ 
+	   {acabado: "Barniz", cantidad: 100,costo:10, unidad:"1Gl" }, 
+	   {acabado: "Laca", cantidad: 100,costo:10, unidad:"1Gl"}, 
+	   {acabado: "Sellador", cantidad: 100,costo:10, unidad:"1Gl"}, 
+	   {acabado: "Pintura", cantidad: 100,costo:10, unidad:"1Gl"} 
+          ]},
+  {pegamentos: [ 
+           {pegamento: "Cola", cantidad:100,costo:28, unidad:"1Gl"},
+	   {pegamento: "De_contacto", cantidad:100,costo:80, unidad:"1Gl"},
+	   {pegamento: "Resina", cantidad:100,costo:90, unidad:"1Kg"} 
+          ]},
+  {tapacantos:[
+              {tapacanto: "Tap_Delgado",cantidad:1000,costo:1,unidad:"1m"},
+              {tapacanto: "Tap_Grueso",cantidad:1000,costo:4,unidad:"1m"}
+             ]},
+  {bisagras:[
+             {bisagra: "bis_2",descripcion: "2 pulgadas",cantidad:100,costo:15,unidad:"und"},
+             {bisagra: "bis_3",descripcion: "3 pulgadas",cantidad:100,costo:20,unidad:"und"},
+             {bisagra: "bis_4",descripcion: "4 pulgadas",cantidad:100,costo:30,unidad:"und"},
+            ]}
+
+]) 
+
+
+#*******************************************
+#                  PERSONAL                *
+#*******************************************
+
+#*** REGISTRO DE PERSONAL ***
+
+db.personal.insertMany( [
+{ codper:"P001",nombre: "Juan", apellido: "Lucio",  cargo: "Carpintero",turno:"Mañana" }, 
+{ codper:"P002",nombre: "Carlos", apellido: "Sifuentes", cargo: "Carpintero",turno:"Tarde" }, 
+{ codper:"P003",nombre: "Luis", apellido: "Miranda", cargo: "Diseñador",turno:"Completo"}, 
+{ codper:"P004",nombre: "Manuel", apellido: "Perez", cargo: "Asistente",turno:"Mañana"}, 
+{ codper:"P005",nombre: "Pedro", apellido: "Suarez", cargo: "Asistente",turno:"Mañana"}, 
+{ codper:"P006",nombre: "Enrique", apellido: "Luna", cargo: "Asistente",turno:"Tarde"}, 
+{ codper:"P007",nombre: "Luisa", apellido: "Manrique", cargo: "Ventas",turno:"Mañana"}, 
+{ codper:"P008",nombre: "Evelyn", apellido: "Chipana", cargo: "Ventas",turno:"Tarde"}, 
+]) 
+
+
+#*******************************************
+#              PRODUCCION                  *
+#*******************************************
+
+#-------------------------------
+#   Produccion de un Armario   -
+#-------------------------------
+
+db.produccion.insertOne( 
+{
+  producto : "Armario",
+  fecha_ini: "25-05-2024",
+  fecha_fin: "30-05-2024",
+  dias_trab: 5,
+  cantidad: 3,
+  materia_prima: [
+        {
+            "nombre" : "Cedro",
+            "cantidad" : 9,
+            "unidad" : "m3"
+        },
+        {
+            "nombre" : "Tornillo",
+            "cantidad" : 3,
+            "unidad" : "m3"
+        }
+    ],
+  insumos : [
+        {
+            "nombre" : "cla_1",
+            "cantidad" : 1,
+            "unidad" : "1Kg"
+        },
+        {
+            "nombre" : "tor_1",
+            "cantidad" : 1,
+            "unidad" : "1Kg"
+        },
+        {
+            "nombre" : "cola",
+            "cantidad" : 1,
+            "unidad" : "1Gl"
+        },
+        {
+            "nombre" : "lij_80",
+            "cantidad" : 20,
+            "unidad" : "und"
+        },
+        {
+            "nombre" : "lij_180",
+            "cantidad" : 15,
+            "unidad" : "und"
+        },
+        {
+            "nombre" : "Barniz",
+            "cantidad" : 1,
+            "unidad" : "1Gl"
+        },
+
+    ],
+    personal: [
+        {
+            codper : "P001",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P004",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P005",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        }
+    ]
+}) 
+
+#--------------------------------------
+#    Produccion de Silla de comedor   -
+#--------------------------------------
+
+db.produccion.insertOne( 
+{
+  producto : "Silla de comedor",
+  fecha_ini: "25-05-2024",
+  fecha_fin: "29-05-2024",
+  dias_trab: 4,
+  cantidad: 18,
+  materia_prima: [
+        {
+            nombre : "Tornillo",
+            cantidad : 3,
+            unidad : "m3"
+        }
+    ],
+  insumos : [
+        {
+            nombre : "cla_1",
+            cantidad : 1,
+            unidad : "1Kg"
+        },
+        {
+            nombre : "cola",
+            cantidad : 1,
+            unidad : "1Gl"
+        },
+        {
+            nombre : "lij_80",
+            cantidad : 15,
+            unidad : "und"
+        },
+        {
+            nombre : "lij_180",
+            cantidad : 12,
+            unidad : "und"
+        },
+        {
+            "nombre" : "Barniz",
+            "cantidad" : 1,
+            "unidad" : "1Gl"
+        },
+
+    ],
+    personal: [
+        {
+            codper : "P002",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P006",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        }
+    ]
+}) 
+
+
+#-----------------------------------------------
+#    Produccion de Modulo de Entretenimiento   -
+#-----------------------------------------------
+
+db.produccion.insertOne( 
+{
+  producto : "Modulo de Entretenimiento",
+  fecha_ini: "25-05-2024",
+  fecha_fin: "15-06-2024",
+  dias_trab: 20,
+  cantidad: 4,
+  materia_prima: [
+        {
+            nombre : "Melamina 18mm",
+            cantidad : 12,
+            medidas:"215x244"
+        }
+    ],
+  insumos : [
+        {
+            nombre : "tor_1",
+            cantidad : 2,
+            unidad : "100und"
+        },
+        {
+            nombre : "De_contacto",
+            cantidad : 1,
+            unidad : "1Gl"
+        },
+        {
+            "nombre" : "Tap_Delgado",
+            "cantidad" : 100,
+            "unidad" : "1m"
+        },
+        {
+            "nombre" : "Tap_Grueso",
+            "cantidad" : 80,
+            "unidad" : "1m"
+        },
+
+    ],
+    personal: [
+        {
+            codper : "P001",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P003",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P004",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        }
+    ]
+}) 
+
+
+#-----------------------------------------
+#    Produccion de Caballete Plegable    -
+#-----------------------------------------
+
+db.produccion.insertOne( 
+{
+  producto : "Caballete Plegable",
+  fecha_ini: "15-06-2024",
+  fecha_fin: "20-06-2024",
+  dias_trab: 5,
+  cantidad: 10,
+  materia_prima: [
+        {
+            nombre : "Tornillo",
+            cantidad : 2,
+            unidad : "m3"
+        }
+    ],
+  insumos : [
+        {
+            nombre : "cla_2",
+            cantidad : 1,
+            unidad : "1Kg"
+        },
+        {
+            nombre : "cola",
+            cantidad : 1,
+            unidad : "1Gl"
+        },
+        {
+            nombre : "lij_80",
+            cantidad : 10,
+            unidad : "und"
+        },
+        {
+            nombre : "lij_180",
+            cantidad : 7,
+            unidad : "und"
+        },
+        {
+            "nombre" : "bis_3",
+            "cantidad" : 20,
+            "unidad" : "und"
+        },
+        {
+            "nombre" : "Barniz",
+            "cantidad" : 1,
+            "unidad" : "1Gl"
+        },
+
+    ],
+    personal: [
+        {
+            codper : "P001",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        },
+        {
+            codper : "P006",
+            horas_trabajadas : "8",
+            unidad : "horas"
+        }
+    ]
+}) 
+
+
+#**********************************************************************
+#    ACTUALIZACION DE STOCK DE MATERIAL UTILIZADO EN LA PRODUCCION    *
+#**********************************************************************
+
+#---------------------------------------------------
+#   Actualizacion de stock de Material - Armario   -
+#---------------------------------------------------
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Cedro"},
+	{
+	  $inc: { "maderas.$.cantidad": -9 }
+	}
+)
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Tornillo"},
+	{
+	  $inc: { "maderas.$.cantidad": -3 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "clavos.coditm" : "cla_1"},
+	{
+	  $inc: { "clavos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "tornillos.coditm" : "tor_1"},
+	{
+	  $inc: { "tornillos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "pegamentos.pegamento" : "Cola"},
+	{
+	  $inc: { "pegamentos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_80"},
+	{
+	  $inc: { "lijas.$.cantidad": -20 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_180"},
+	{
+	  $inc: { "lijas.$.cantidad": -15 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "acabados.acabado" : "Barniz"},
+	{
+	  $inc: { "acabados.$.cantidad": -1 }
+	}
+)
+
+#------------------------------------------------------------
+#   Actualizacion de stock de Material - Silla de comedor   -
+#------------------------------------------------------------
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Tornillo"},
+	{
+	  $inc: { "maderas.$.cantidad": -3 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "clavos.coditm" : "cla_1"},
+	{
+	  $inc: { "clavos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "pegamentos.pegamento" : "Cola"},
+	{
+	  $inc: { "pegamentos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_80"},
+	{
+	  $inc: { "lijas.$.cantidad": -15 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_180"},
+	{
+	  $inc: { "lijas.$.cantidad": -12 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "acabados.acabado" : "Barniz"},
+	{
+	  $inc: { "acabados.$.cantidad": -1 }
+	}
+)
+
+#---------------------------------------------------------------------
+#   Actualizacion de stock de Material - Modulo de Entretenimiento   -
+#---------------------------------------------------------------------
+
+db.materia_prima.updateOne(
+	{ "tableros.tipo" : "Melamina 18mm"},
+	{
+	  $inc: { "tableros.$.cantidad": -12 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "tornillos.coditm" : "tor_1"},
+	{
+	  $inc: { "tornillos.$.cantidad": -2 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "pegamentos.pegamento" : "De_contacto"},
+	{
+	  $inc: { "pegamentos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "tapacantos.tapacanto" : "Tap_Delgado"},
+	{
+	  $inc: { "tapacantos.$.cantidad": -100 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "tapacantos.tapacanto" : "Tap_Grueso"},
+	{
+	  $inc: { "tapacantos.$.cantidad": -80 }
+	}
+)
+
+#--------------------------------------------------------------
+#   Actualizacion de stock de Material - Caballete Plegable   -
+#--------------------------------------------------------------
+
+db.materia_prima.updateOne(
+	{ "maderas.tipo" : "Tornillo"},
+	{
+	  $inc: { "maderas.$.cantidad": -2 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "clavos.coditm" : "cla_2"},
+	{
+	  $inc: { "clavos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "pegamentos.pegamento" : "Cola"},
+	{
+	  $inc: { "pegamentos.$.cantidad": -1 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_80"},
+	{
+	  $inc: { "lijas.$.cantidad": -10 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "lijas.coditm" : "lij_180"},
+	{
+	  $inc: { "lijas.$.cantidad": -7 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "bisagras.bisagra" : "bis_3"},
+	{
+	  $inc: { "bisagras.$.cantidad": -20 }
+	}
+)
+
+db.insumos.updateOne(
+	{ "acabados.acabado" : "Barniz"},
+	{
+	  $inc: { "acabados.$.cantidad": -1 }
+	}
+)
+

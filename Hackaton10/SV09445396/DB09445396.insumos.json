@@ -1,0 +1,201 @@
+[{
+  "_id": {
+    "$oid": "66533c00404641712d9680d5"
+  },
+  "clavos": [
+    {
+      "coditm": "cla_1/2",
+      "medida": "1/2 pulgada",
+      "cantidad": 100,
+      "costo": 5,
+      "unidad": "1Kg"
+    },
+    {
+      "coditm": "cla_3/4",
+      "medida": "3/4 pulgada",
+      "cantidad": 100,
+      "costo": 15,
+      "unidad": "1Kg"
+    },
+    {
+      "coditm": "cla_1",
+      "medida": "1 pulgada",
+      "cantidad": 98,
+      "costo": 16,
+      "unidad": "1Kg"
+    },
+    {
+      "coditm": "cla_2",
+      "medida": "2 pulgada",
+      "cantidad": 99,
+      "costo": 10,
+      "unidad": "1Kg"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680d6"
+  },
+  "tornillos": [
+    {
+      "coditm": "tor_1/2",
+      "medida": "1/2 pulgada",
+      "cantidad": 100,
+      "costo": 54,
+      "unidad": "100und"
+    },
+    {
+      "coditm": "tor_3/4",
+      "medida": "3/4 pulgada",
+      "cantidad": 100,
+      "costo": 70,
+      "unidad": "100und"
+    },
+    {
+      "coditm": "tor_1",
+      "medida": "1 pulgada",
+      "cantidad": 97,
+      "costo": 100,
+      "unidad": "100und"
+    },
+    {
+      "coditm": "tor_2",
+      "medida": "2 pulgada",
+      "cantidad": 100,
+      "costo": 130,
+      "unidad": "100und"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680d7"
+  },
+  "lijas": [
+    {
+      "coditm": "lij_80",
+      "lija": "80",
+      "cantidad": 55,
+      "costo": 3,
+      "unidad": "und"
+    },
+    {
+      "coditm": "lij_100",
+      "lija": "100",
+      "cantidad": 100,
+      "costo": 3,
+      "unidad": "und"
+    },
+    {
+      "coditm": "lij_180",
+      "lija": "180",
+      "cantidad": 66,
+      "costo": 3,
+      "unidad": "und"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680d8"
+  },
+  "acabados": [
+    {
+      "acabado": "Barniz",
+      "cantidad": 97,
+      "costo": 10,
+      "unidad": "1Gl"
+    },
+    {
+      "acabado": "Laca",
+      "cantidad": 100,
+      "costo": 10,
+      "unidad": "1Gl"
+    },
+    {
+      "acabado": "Sellador",
+      "cantidad": 100,
+      "costo": 10,
+      "unidad": "1Gl"
+    },
+    {
+      "acabado": "Pintura",
+      "cantidad": 100,
+      "costo": 10,
+      "unidad": "1Gl"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680d9"
+  },
+  "pegamentos": [
+    {
+      "pegamento": "Cola",
+      "cantidad": 97,
+      "costo": 28,
+      "unidad": "1Gl"
+    },
+    {
+      "pegamento": "De_contacto",
+      "cantidad": 99,
+      "costo": 80,
+      "unidad": "1Gl"
+    },
+    {
+      "pegamento": "Resina",
+      "cantidad": 100,
+      "costo": 90,
+      "unidad": "1Kg"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680da"
+  },
+  "tapacantos": [
+    {
+      "tapacanto": "Tap_Delgado",
+      "cantidad": 900,
+      "costo": 1,
+      "unidad": "1m"
+    },
+    {
+      "tapacanto": "Tap_Grueso",
+      "cantidad": 920,
+      "costo": 4,
+      "unidad": "1m"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66533c00404641712d9680db"
+  },
+  "bisagras": [
+    {
+      "bisagra": "bis_2",
+      "descripcion": "2 pulgadas",
+      "cantidad": 100,
+      "costo": 15,
+      "unidad": "und"
+    },
+    {
+      "bisagra": "bis_3",
+      "descripcion": "3 pulgadas",
+      "cantidad": 80,
+      "costo": 20,
+      "unidad": "und"
+    },
+    {
+      "bisagra": "bis_4",
+      "descripcion": "4 pulgadas",
+      "cantidad": 100,
+      "costo": 30,
+      "unidad": "und"
+    }
+  ]
+}]

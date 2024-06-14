@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6656c56ed9696d7a9a914571"
+  },
+  "proveedor": "Proveedor C",
+  "fecha_compra": {
+    "$date": "2023-05-05T00:00:00.000Z"
+  },
+  "cantidad": 50,
+  "precio_unitario": 20,
+  "descripcion": "Clavos"
+},
+{
+  "_id": {
+    "$oid": "6656c56ed9696d7a9a914572"
+  },
+  "proveedor": "Proveedor D",
+  "fecha_compra": {
+    "$date": "2023-06-20T00:00:00.000Z"
+  },
+  "cantidad": 100,
+  "precio_unitario": 10,
+  "descripcion": "Tornillos"
+},
+{
+  "_id": {
+    "$oid": "6656c56ed9696d7a9a914573"
+  },
+  "proveedor": "Proveedor E",
+  "fecha_compra": {
+    "$date": "2023-07-15T00:00:00.000Z"
+  },
+  "cantidad": 200,
+  "precio_unitario": 5,
+  "descripcion": "Bisagras"
+},
+{
+  "_id": {
+    "$oid": "6656c56ed9696d7a9a914574"
+  },
+  "proveedor": "Proveedor F",
+  "fecha_compra": {
+    "$date": "2023-08-10T00:00:00.000Z"
+  },
+  "cantidad": 150,
+  "precio_unitario": 15,
+  "descripcion": "Lijas"
+}]
