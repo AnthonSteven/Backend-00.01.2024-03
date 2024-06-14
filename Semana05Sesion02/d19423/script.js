@@ -12,6 +12,7 @@ const Reserva = function () //a
     let Ciudad;
     let Nombre;
     let arrAviones = [];
+    
     function configurar() {
         console.log("Iniciando la Configuracion");
         $("#titulo").text(Nombre)
