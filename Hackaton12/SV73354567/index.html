@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Compras</h1>
+        
+        <!-- Formulario para crear una nueva lista de compras -->
+        <h2>Crear Nueva Lista de Compras</h2>
+        <form action="/crear-lista" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción" required>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <button type="submit">Crear Lista</button>
+        </form>
+
+        <!-- Botones para mostrar listas de compras pendientes y completadas -->
+        <h2>Listas de Compras</h2>
+        <button onclick="mostrarPendientes()">Mostrar Pendientes</button>
+        <button onclick="mostrarCompletados()">Mostrar Completadas</button>
+
+        <!-- Contenedor para mostrar las listas de compras -->
+        <div id="listaCompras" class="no-lists">No hay listas de compras.</div>
+    </div>
+
+    <!-- Script para realizar peticiones al servidor y mostrar las listas de compras -->
+    <script>
+        function mostrarPendientes() {
+            fetch('/pendientes')
+                .then(response => response.json())
+                .then(data => {
+                    mostrarLista(data);
+                });
+        }
+
+        function mostrarCompletados() {
+            fetch('/completados')
+                .then(response => response.json())
+                .then(data => {
+                    mostrarLista(data);
+                });
+        }
+
+        function mostrarLista(data) {
+            const listaCompras = document.getElementById('listaCompras');
+            listaCompras.innerHTML = '';
+
+            if (data.length === 0) {
+                listaCompras.innerHTML = '<p>No hay listas de compras.</p>';
+            } else {
+                const ul = document.createElement('ul');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `Nombre: ${item.nombre}, Descripción: ${item.descripcion}, Fecha: ${item.fecha}`;
+                    ul.appendChild(li);
+                });
+                listaCompras.appendChild(ul);
+            }
+        }
+    </script>
+</body>
+</html>

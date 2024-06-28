@@ -2,8 +2,8 @@
 
 --drop database prueba2;
 
---create database prueba2;
---use prueba2;
+create database prueba2;
+use prueba2;
 
 
 create table tbl_usuario(
