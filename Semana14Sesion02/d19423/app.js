@@ -9,13 +9,28 @@ const io = socketIO(server);
 const port = process.env.PORT || 3000;
 app.use(express.static("public"));
 
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
 
 io.on("connection", (socket) => {
     console.log("New user connected");
+    const conversationHistory = [];
     socket.on("sendMessage", async (message, callback) => {
         try {
             console.log(message);
-
+            conversationHistory.push({ role: "user", content: message });
+            const completion = await openai.createChatCompletion({
+                model: process.env.MODEL || "gpt-3.5-turbo",
+                messages: conversationHistory,
+            });
+            console.log(completion);
+            const response = completion.data.choices[0].message.content;
+            conversationHistory.push({ role: "assistant", content: response });
+            socket.emit("message", response);
             callback();
         } catch (error) {
             console.error(error);
