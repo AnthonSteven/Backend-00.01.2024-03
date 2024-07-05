@@ -15,7 +15,7 @@ function StripePayment() {
   }); 
 
   const makePayment = async () => { 
-    const stripe = await loadStripe("pk_test_51PDcAfIjLeNFstP3bLD4bmNIigG5dZHT1zOwO2fFvNOAaEm18xuJ1w9NlifROSBW72hXxevCGb4n3n8fDaevkZi500hdYX18nl"); 
+    const stripe = await loadStripe("pk_test_51NcxTJAkNYfeym1I2nddmvG02uLV9OcwrG3HJIOq59ebzgXjXQ78wTOUd6WIpmdykJCJiXNbbq0yg2tp3ZwN2Fxc00a67VDtbf"); 
     const body = { product }; 
     const headers = { 
       "Content-Type": "application/json", 
