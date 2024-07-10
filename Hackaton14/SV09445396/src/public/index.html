@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sockets crud</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/main.css" />
+
+</head>
+<body>
+
+    <div class="container  p-4 msg-container">
+      
+      <div id="notes">
+        <!-- Aqui va la lista de mensajes -->
+      </div>
+      
+      <form id="noteForm" class="card card-body ">
+        <div class="cont-msg">
+          <input  id="title" type="text" name="message" placeholder="Escribir mensaje" class="form-control mb-3" autofocus />
+          <button>Enviar</button>
+        </div>
+      </form>
+      
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- type="module" para que permita importar otros archivos de javascript  -->
+    <script src="main.js" type="module"></script>
+</body>
+</html>

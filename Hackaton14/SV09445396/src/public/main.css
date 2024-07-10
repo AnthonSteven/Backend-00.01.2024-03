@@ -1,0 +1,72 @@
+body {
+    height: 100vh;
+    background: grey;
+}
+
+.cont-div{
+    background-color: darkturquoise;
+}
+
+.cont-msg{
+    display: flex;
+}
+
+#noteForm{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+#notes{
+    overflow: auto;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+ button {
+    background-color: lightseagreen;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .msg-container {
+    background-color: lightseagreen;
+    height: 97%;
+    width: 700px;
+    margin-top: 10px;    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont-display{
+    margin-right: 15px;
+  }
+
+  .btn-del {
+    background-color: cornflowerblue;        
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .btn-upd {
+    background-color: darkgrey;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+  }

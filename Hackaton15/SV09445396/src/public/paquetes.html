@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Entrega de Paquetes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/paquetes.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sistema de Entrega de Paquetes</h1>
+      
+    <div class="cont-add">
+      <h3>Añadir paquete</h3>
+        <form action="/paquetes" method="post">
+          <div class="cont-ent">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese se nombre" required>
+          </div>
+          <div class="cont-ent">
+            <label for="direccion">Direccion:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ingrese la dirección de su domicilio" required>
+          </div>
+          <div class="cont-ent">
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese se teléfono" required>
+          </div>
+          <div class="cont-ent">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingrese un correo" required>
+          </div>
+          <div class="cont-ent">
+            <label for="dir_entrega">Dirección de entrega:</label>
+            <input type="text" id="dir_entrega" name="dir_entrega" placeholder="Ingrese dirección de entrega" required>
+          </div>
+          <div class="cont-ent">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion"  placeholder="Ingrese una descripción del paquete" required>
+          </div>
+          <div class="cont-med">
+            <div class="cont-ent">
+              <label for="peso">Peso:</label>
+              <input type="number" id="peso" name="peso" pattern="^[0-9]" min="1" step="1" required>
+            </div>
+            <div class="cont-ent">
+              <label class="etiqueta" for="largo">Largo:</label>
+              <input type="number" id="largo" name="largo" pattern="^[0-9]" min="1" step="1" required>
+            </div>
+            <div class="cont-ent">
+              <label class="etiqueta" for="ancho">Ancho:</label>
+              <input type="number" id="ancho" name="ancho" pattern="^[0-9]" min="1" step="1" required>
+            </div>
+            <div class="cont-ent">
+              <label class="etiqueta" for="alto">Alto:</label>
+              <input type="number" id="alto" name="alto" pattern="^[0-9]" min="1" step="1" required>
+            </div>
+          </div>
+          <button type="submit">Añadir paquete</button>
+        </form>
+    </div>
+
+    <div class="cont-paquetes">
+      <h3>Lista de paquetes - Estados</h3>
+      <div id="paquetes-list"></div>
+    </div>
+   
+    <div class="cont-act">
+      <h3>Actualizar estado de paquete</h3>
+      <!-- <form action="/paquetes/actualizar" method="post"> -->
+      <form action="" method="">
+        <div class="cont-ent">
+          <label for="id">ID del paquete:</label>
+          <input type="number" id="paqId" name="id" pattern="^[0-9]" min="1" step="1" placeholder="Id" required>
+        </div>
+        
+        <div class="cont-ent">
+          <label for="Estado">Estado</label>
+          <select id="estadoId" name="estado">
+            <option value="">Estado</option>
+          </select>
+        </div>
+        
+        <button onclick="validarYActualizarCampo()" type="submit">Actualizar estado</button>
+      </form>
+    </div>
+
+    <div class="cont-del">
+      <h3>Eliminar paquete</h3>
+      <form action="/paquetes/eliminar" method="post">
+        <div class="cont-ent">
+          <label for="id">ID del paquete:</label>
+          <input type="number" id="id" name="id" pattern="^[0-9]" min="1" step="1" placeholder="Id" required>
+        </div>
+        <button type="submit">Eliminar paquete</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- La ventana modal -->
+  <div id="customAlertModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Título de la Ventana Modal</h2>
+      <p id="modalMessage">Este es un mensaje en la ventana modal.</p>
+      <button id="modalOkBtn">Aceptar</button>
+    </div>
+  </div>
+  <!-- La ventana modal -->
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/paquetes.js"></script>
+
+  <script>
+    const socket = io();
+
+    socket.on('connect', () => {
+      console.log('Conectado al servidor');
+    });
+
+    socket.on('error', (message) => {
+      console.error(message);
+    });
+
+    socket.on('success', (message) => {
+      showModalMessage("Aviso", message );
+      alert(message);
+      console.log(message);
+    });
+
+
+    socket.on('paquetes', paquetes => {
+      const paquetesList = document.getElementById('paquetes-list');
+      paquetesList.innerHTML = '';
+
+      //==========================================================================
+      // Creacion de tabla para mostrar relacion de paquetes ingresados vs estado
+      //==========================================================================
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      const headers = ['Id', 'Nombre', 'Descripcion','Peso','Largo','Ancho','Alto','Direccion entrega','Estado'];
+
+      headers.forEach(headerText => {
+          const th = document.createElement('th');
+          th.textContent = headerText;
+          headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+      const tbody = document.createElement('tbody');
+      //==========================================================================
+      // Creacion de tabla para mostrar relacion de paquetes ingresados vs estado
+      //==========================================================================
+
+
+      // Carga de datos de los paquetes
+      paquetes.forEach(paquete => {
+        const row = document.createElement('tr');
+        const td1 = document.createElement('td');
+        td1.textContent = paquete.id;
+        row.appendChild(td1);
+
+        const td2 = document.createElement('td');
+        td2.textContent = paquete.nombre;
+        row.appendChild(td2);
+
+        const td3 = document.createElement('td');
+        td3.textContent = paquete.descripcion;
+        row.appendChild(td3);
+
+        const td4 = document.createElement('td');
+        td4.textContent = paquete.peso;
+        row.appendChild(td4);
+
+        const td5 = document.createElement('td');
+        td5.textContent = paquete.largo;
+        row.appendChild(td5);
+
+        const td6 = document.createElement('td');
+        td6.textContent = paquete.ancho;
+        row.appendChild(td6);
+
+        const td7 = document.createElement('td');
+        td7.textContent = paquete.alto;
+        row.appendChild(td7);
+
+        const td8 = document.createElement('td');
+        td8.textContent = paquete.dir_entrega;
+        row.appendChild(td8);
+
+        const td9 = document.createElement('td');
+        td9.textContent = paquete.estado;
+        row.appendChild(td9);
+
+        tbody.appendChild(row);
+        table.appendChild(tbody);
+
+        paquetesList.appendChild(table);
+      });
+      
+    });
+
+    // Carga de lista de estados
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/api/estados')
+          .then(response => response.json())
+          .then(data => {
+              const userSelect = document.getElementById('estadoId');
+              data.forEach(estad => {
+                  const option = document.createElement('option');
+                  option.value = estad.estado;
+                  option.textContent = estad.estado;
+                  userSelect.appendChild(option);
+              });
+          })
+          .catch(error => console.error('Error cargando los estados:', error));
+     });
+
+    // Validacion de seleccion de estados 
+    function validarYActualizarCampo() {
+      const id = document.getElementById('paqId').value;
+      const estado = document.getElementById('estadoId').value;
+      socket.emit('updateField', id, estado);
+    }
+
+  </script>
+  
+</body>
+</html>
