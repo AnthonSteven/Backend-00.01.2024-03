@@ -23,14 +23,12 @@ if (typeof(Storage) !== "undefined") {
   localStorage.setItem("info",JSON.stringify(objInfo));
 console.log(localStorage.getItem("info"));
   document.getElementById("info").innerHTML = localStorage.getItem("info");
-
+ //let objJSON = localStorage.getItem("info");
   let strHtml = "<ul>";
-  //let objJSON = localStorage.getItem("info");
-  let objJSON = JSON.parse( localStorage.getItem("info"));
+   let objJSON = JSON.parse( localStorage.getItem("info"));
 
   Object.keys(objJSON).forEach(function(key) {
-
-  
+ 
     strHtml+= `<li> ${objJSON[key]} </li>`
   
   });
