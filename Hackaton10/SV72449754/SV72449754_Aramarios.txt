@@ -1,0 +1,306 @@
+
+
+OPERACIONES EFECTUADAS EN MONGO DB
+
+    =================================================================================
+                            CREACION DEL DB Y COLECCIONES 
+    =================================================================================
+
+    use SV72449754
+    db.createCollection("Materia_Prima")
+    db.createCollection("Insumos")
+    db.createCollection("Personal")
+    db.createCollection("Produccion")
+
+
+
+    =================================================================================
+                                   C: INSERT DATA
+    =================================================================================
+
+    -- MATERIA PRIMA
+
+    db.Materia_Prima.insertMany([  
+    {
+            Proveedor:"MADEXO",
+            Cod_Producto:"MPR-125-12",
+            Producto:"Madera-A",
+            Descripcion:"Madera para Armarios pequeños",
+            Contacto_Proveedor: {Nombre:"Juan Carlos",Telefono:"977888123",Cargo:"Ventas"},
+            Unidad:"Plancha de  20mm x	700mm x 3000mm",
+            Cantidad: 60,
+            Precio_Unit:"$60.5",
+            Fecha_Pago: new Date("2024-02-10"), 
+            Fecha_Recepcion: new Date("2024-03-10"),
+            Estado_Recepcion: "Entregado",
+            Parametros_Recepcion: {Color:"Amarillo palido",Olor:"N/a",Aspecto:"Buen estado"}
+    },
+
+    {       
+            Proveedor:"MADEIROS JS",
+            Cod_Producto:"MPR-350-20",
+            Producto:"Madera-B",
+            Descripcion:"Madera para Armarios Medianos",
+            Contacto_Proveedor: {Nombre:"Miguel Santana",Telefono:"999888777",Cargo:"Rep. Ventas"},
+            Unidad:"Plancha de  20mm x	1200mm x 4000mm",
+            Cantidad: 80,
+            Precio_Unit:"$100.2",
+            Fecha_Pago: new Date("2024-06-10"), 
+            Fecha_Recepcion: new Date("2024-08-12"),
+            Estado_Recepcion: "Pendiente",
+            Parametros_Recepcion: {Color:"rojo cobrizo",Olor:"Olor seco",Aspecto:"Buen estado"}        
+    },
+
+    {
+            Proveedor:"MADEXO",
+            Cod_Producto:"MPR-750-40",
+            Producto:"Madera-C",
+            Descripcion:"Madera para Armarios Grandes",
+            Contacto_Proveedor: {Nombre:"Raul Vargas",Telefono:"999111222",Cargo:"Rep. Ventas"},
+            Unidad:"Plancha de  30mm x	1500mm x 5000mm",
+            Cantidad: 25,
+            Precio_Unit:"$400.0",
+            Fecha_Pago: new Date("2024-05-11"), 
+            Fecha_Recepcion: new Date("2024-07-10"),
+            Estado_Recepcion: "Pendiente",
+            Parametros_Recepcion: {Color:"marrón rojizo",Olor:"Olor seco",Aspecto:"Buen estado"} 
+        
+    }
+    ])
+
+
+    -- INSUMOS
+
+    db.Insumos.insertMany([  
+    {
+        Proveedor:"Ferreteria SA",
+        Cod_Producto: "Ins-100-001",
+        Producto: "Clavos",
+        Descripcion: "Clavos 25mm x 2.2mm",
+        Contacto_Proveedor: {Nombre:"Jose Diaz",Telefono:"999123456",Cargo:"Gerente comercial"},
+        Unidad:"Kg",
+        Cantidad:100,
+        Precio_Unit:20,
+        Fecha_Pago:new Date("2024-03-22"), 
+        Fecha_Recepcion: new Date("2024-05-30"), 
+        Estado_Recepcion: "Entregado"
+            
+    },
+
+    {     
+        Proveedor:"Ferrosol",
+        Cod_Producto: "Ins-200-002",
+        Producto: "Bisagras",
+        Descripcion: "Bisagra de 4 inch con rodamiento de Bola para puerta Interior",
+        Contacto_Proveedor: {Nombre:"Camila perez",Telefono:"987654321",Cargo:"Ventas"},
+        Unidad:"Und",
+        Cantidad:1500,
+        Precio_Unit:70,
+        Fecha_Pago:new Date("2024-04-05"), 
+        Fecha_Recepcion: new Date("2024-09-01"), 
+        Estado_Recepcion: "Pendiente"  
+                  
+    },
+       
+    {
+        Proveedor:"Ferrosol",
+        Cod_Producto: "Ins-300-003",
+        Producto: "Barniz",
+        Descripcion: "Barniz Doble Accion 1 galon",
+        Contacto_Proveedor: {Nombre:"Luis vasquez",Telefono:"997722110",Cargo:"Ventas"},
+        Unidad:"Galon",
+        Cantidad:300,
+        Precio_Unit:120,
+        Fecha_Pago:new Date("2024-01-05"), 
+        Fecha_Recepcion: new Date("2024-05-01"), 
+        Estado_Recepcion: "Entregado"
+         
+    }
+    ])
+
+
+
+    -- PERSONAL
+
+    db.Personal.insertMany([  
+    {
+        Codigo:"OP-123456",
+        Nombre: "Luis Seminario",
+        Cargo: "Carpintero",
+        Area:   "OPerativa",
+        Direccion: "Jr. daniel obrero 1520",
+        Telefono: "945123741",
+        Experiencia: 5      
+    },
+
+    {    
+        Codigo:"OP-987654",
+        Nombre: "Carlos quintanilla",
+        Cargo: "Carpintero",
+        Area:   "OPerativa",
+        Direccion: "Jr. azul 1110",
+        Telefono: "999222333",
+        Experiencia: 7         
+    },
+       
+    {
+        Codigo:"DI-222333",
+        Nombre: "Jose Jimenez",
+        Cargo: "Diseñador de Muebles",
+        Area:   "Diseño",
+        Direccion: "Jr. jauregui 785",
+        Telefono: "987123666",
+        Experiencia: 8
+    },
+
+     {
+        Codigo:"VE-111000",
+        Nombre: "Laura porras",
+        Cargo: "Vendedor",
+        Area:   "Marketing",
+        Direccion: "Av. brasil 1787",
+        Telefono: "911456987",
+        Experiencia: 3
+    },
+
+    {    
+        Codigo:"OP-666412",
+        Nombre: "Cesar Gonzales",
+        Cargo: "Electricista",
+        Area:   "OPerativa",
+        Direccion: "Av. argentina 2425",
+        Telefono: "999444188",
+        Experiencia: 6        
+    },
+
+     {    
+        Codigo:"CT-666412",
+        Nombre: "Andrea Medina",
+        Cargo: "Contadora",
+        Area:   "Logistica y Contabilidad",
+        Direccion: "Av. Abancay 1027",
+        Telefono: "912885533",
+        Experiencia: 4        
+    }
+
+    ])
+
+
+     -- PRODUCCION
+
+    db.Produccion.insertMany([  
+    {
+        Cliente: "Muebleria Confort",
+        Contacto_Cliente: {Nombre:"jose camacho",Telefono:"912789123",Cargo:"ventas"},
+        Codigo: "PR2024-010",
+        Producto: "Armario de Libros",
+        Cantidad:25,
+        Costo_Unit:1200,
+        Precio_Venta:2500,
+        Fecha_Produccion: new Date("2024-06-10"), 
+        TiempoEstimado_Dias_Fabricacion:15,
+        Fecha_Entrega: null,
+        Materia_Prima_Utilizado:{Cod_MatPrima:"MPR-350-20",Cantidad:15},
+        Insumo_Utilizado:[{Cod_Insumo:"Ins-100-001",Cantidad:50},{Cod_Insumo:"Ins-200-002",Cantidad:10},{Cod_Insumo:"Ins-300-003",Cantidad:2}],
+        Personal_Encargado:[{Cod_Personal:"OP-123456",Nombre_Personal:"Luis Seminario"}],
+        Estado_Entrega:"Pendiente"
+             
+    },
+
+    {    
+        Cliente: "Persona Natural",
+        Contacto_Cliente: {Nombre:"Cristian valdivia",Telefono:"911333456",Cargo:null},
+        Codigo: "PR2024-015",
+        Producto: "Armario para Artefactos",
+        Cantidad:2,
+        Costo_Unit:1000,
+        Precio_Venta:1300,
+        Fecha_Produccion: new Date("2024-05-08"), 
+        TiempoEstimado_Dias_Fabricacion:16,
+        Fecha_Entrega: null,
+        Materia_Prima_Utilizado:{Cod_MatPrima:"MPR-750-40",Cantidad:8},
+        Insumo_Utilizado:[{Cod_Insumo:"Ins-100-001",Cantidad:100},{Cod_Insumo:"Ins-200-002",Cantidad:15},{Cod_Insumo:"Ins-300-003",Cantidad:5}],
+        Personal_Encargado:[{Cod_Personal:"OP-666412",Nombre_Personal:"Cesar Gonzales"},{Cod_Personal:"OP-987654",Nombre_Personal:"Carlos quintanilla"}],
+        Estado_Entrega:"Vencido"
+            
+    },
+       
+    {
+        Cliente: "Constructora Ferreyros",
+        Contacto_Cliente: {Nombre:"Raul La Torre",Telefono:"977221334",Cargo:"Ventas"},
+        Codigo: "PR2024-008",
+        Producto: "Armario de ropa",
+        Cantidad:220,
+        Costo_Unit:800,
+        Precio_Venta:1600,
+        Fecha_Produccion: new Date("2024-02-08"), 
+        TiempoEstimado_Dias_Fabricacion:60,
+        Fecha_Entrega: new Date("2024-05-30"),
+        Materia_Prima_Utilizado:{Cod_MatPrima:"MPR-750-40",Cantidad:8},
+        Insumo_Utilizado:[{Cod_Insumo:"Ins-100-001",Cantidad:8500},{Cod_Insumo:"Ins-200-002",Cantidad:1005},{Cod_Insumo:"Ins-300-003",Cantidad:320}],
+        Personal_Encargado:[{Cod_Personal:"DI-222333",Nombre_Personal:"Jose Jimenez"},{Cod_Personal:"OP-666412",Nombre_Personal:"Cesar Gonzales"},{Cod_Personal:"OP-987654",Nombre_Personal:"Carlos quintanilla"}],
+        Estado_Entrega:"Entregado"
+        
+    }
+
+    ])
+
+
+
+    =================================================================================
+                                  R:  READ DATA
+    =================================================================================
+
+    -- Solicitar los Productos entregados
+    db.Proudccion.find({Estado_Entrega:"Entregado"}, { Cliente: 1, Contacto_Cliente: 1,Codigo:1,Producto:1,Cantidad:1})
+
+    -- Solicitar los 2 empleados con mas años de Experiencia
+    db.Personal.aggregate([ 
+        { $sort: { "Experiencia": -1 } },
+
+        {
+            $project: {
+            "Codigo": 1,
+            "Nombre": 1,
+            "Cargo": 1,
+            "Area": 1,
+            "Experiencia": 1
+            }},
+            
+        {$limit: 2}
+        ])
+
+
+
+
+    =================================================================================
+                                  U:  UPDATE DATA
+    =================================================================================
+
+    -- Aumnetar la cantidad de productos de la Materia Prima "Madera-A"
+    db.Materia_Prima.updateOne( { Cod_Producto:"MPR-125-12" }, { $inc: { Cantidad: 12 } } ) 
+
+    -- Modificar el precio de fabricacion y la cantidad de productos a fabricar "
+    db.Produccion.updateOne( { Cod_Producto: "Ins-100-001" }, {  $set: { Cantidad: 36, Costo_Unit:1350} } )
+
+    -- Modificar los precios de todos los insumos
+    db.Insumos.updateMany({}, { $inc: { Precio_Unit: 40 } })
+
+
+
+
+    =================================================================================
+                                  D:  DELETE DATA
+    =================================================================================
+
+    -- Eliminar empleado de la DB
+    db.Personal.deleteOne( { Codigo:"VE-111000" }) 
+     Codigo:"VE-111000",
+        Nombre: "Laura porras",
+        Cargo: "Vendedor",
+        Area:   "Marketing",
+        Direccion: "Av. brasil 1787",
+        Telefono: "911456987",
+        Experiencia: 3
+
+
