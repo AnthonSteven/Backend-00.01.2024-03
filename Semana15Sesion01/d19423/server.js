@@ -3,6 +3,7 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const app = express();
 const PORT = process.env.PORT || 8080;
+require( "dotenv").config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +21,7 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect(dbConfig.URI, {
+  .connect(process.env.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
