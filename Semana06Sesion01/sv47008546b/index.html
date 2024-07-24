@@ -75,20 +75,26 @@
                     </h2>
                     <p>
                         <a id="btnAgregar" class="btn btn-primary btn-large" href="#">Agregar</a>
+                        <a id="btnEliminar" class="btn btn-primary btn-large" href="#">Eliminar</a>
+
                     </p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <table id="table">
+                <table id="table" data-search="true" data-show-columns="true" data-show-columns-search="true"
+                    data-detail-view="true" data-detail-formatter="detailFormatter">
+
                     <thead>
                         <tr>
-                          <th data-field="nombre">Nombre</th>
-                          <th data-field="descripcion">Descripcion</th>
-                          <th data-field="escala">Escala</th>
+                            <th data-field="nombre">Nombre</th>
+                            <th data-field="descripcion">Descripcion</th>
+                            <th data-field="escala">Escala</th>
+                            <th data-field="accion" data-formatter="accionFormatter" data-events="accionEvents">Acciones
+                            </th>
                         </tr>
-                      </thead>
+                    </thead>
                 </table>
 
                 <h2>
@@ -133,9 +139,12 @@
     </div>
 
 </body>
+<script src="https://kit.fontawesome.com/11bf978e04.js" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.1/dist/bootstrap-table.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="script.js"></script>
 
 </html>
